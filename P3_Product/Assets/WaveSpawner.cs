@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using IronPython.Hosting;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -13,8 +14,16 @@ public class WaveSpawner : MonoBehaviour
     private float countdown = 2f;
 
     public Text waveCountdownText;
-
+    public Text pythonDebugNotif;
     private int waveIndex = 0;
+
+    Microsoft.Scripting.Hosting.ScriptEngine cvEngine;                                                              // first we call up the scriptengine
+
+    private void Start()
+    {
+        cvEngine = global::UnityPython.CreateEngine();                                                              // and assign the ironPython engine on start
+
+    }
 
     void Update ()
     {
@@ -24,9 +33,13 @@ public class WaveSpawner : MonoBehaviour
             countdown = timeBetweenWaves;
 
         }
-
+    
+        var script = cvEngine.CreateScriptSourceFromFile("Assets/Python/test.py");                                  // adress of script
+        var scope = cvEngine.CreateScope();                                                                         // scope of script
+        script.Execute(scope);
+        string result = scope.GetVariable<string>("debugText");                                                     // get variable from script
+        pythonDebugNotif.text = result;                                                                             // set variable in text field
         countdown -= Time.deltaTime;
-
         waveCountdownText.text = Mathf.Round(countdown).ToString();
     }
 
@@ -39,7 +52,7 @@ public class WaveSpawner : MonoBehaviour
             SpawnEnemy();
             yield return new WaitForSeconds(0.5f);
         }
-        Debug.Log("Wave Incomming!");
+        Debug.Log("Wave Incoming!");
     }
 
     void SpawnEnemy()
