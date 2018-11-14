@@ -6,14 +6,6 @@ public class EnemyDestruction : MonoBehaviour {
     public delegate void EnemyDelegate(GameObject enemy);
     public EnemyDelegate enemyDelegate;
 
-    void OnDestroy()
-    {
-        if (enemyDelegate != null)
-        {
-            enemyDelegate(gameObject);
-        }
-    }
-
     // Use this for initialization
     void Start () {
 		
@@ -23,4 +15,12 @@ public class EnemyDestruction : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    void OnDestroy()
+    {
+        if (enemyDelegate != null)
+        {
+            enemyDelegate(gameObject);
+        }
+    }
 }

@@ -14,7 +14,7 @@ public class ShootEnemies : MonoBehaviour {
         towerData = gameObject.GetComponentInChildren<TowerData>();
     }
 
-    void OnEnemyDestroy(GameObject enemy)
+    private void OnEnemyDestroy(GameObject enemy)
     {
         enemiesInRange.Remove(enemy);
     }
@@ -29,7 +29,7 @@ public class ShootEnemies : MonoBehaviour {
             del.enemyDelegate += OnEnemyDestroy;
         }
     }
-    // 3
+
     void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag.Equals("Enemy"))
@@ -54,7 +54,6 @@ public class ShootEnemies : MonoBehaviour {
                 minimalEnemyDistance = distanceToGoal;
             }
         }
-        // 2
         if (target != null)
         {
             if (Time.time - lastShotTime > towerData.CurrentLevel.fireRate)
@@ -68,13 +67,11 @@ public class ShootEnemies : MonoBehaviour {
     private void Shoot(SphereCollider target)
     {
         GameObject bulletPrefab = towerData.CurrentLevel.bullet;
-        // 1 
         Vector3 startPosition = gameObject.transform.position;
         Vector3 targetPosition = target.transform.position;
         startPosition.y = bulletPrefab.transform.position.y;
         targetPosition.y = bulletPrefab.transform.position.y;
 
-        // 2 
         GameObject newBullet = (GameObject)Instantiate(bulletPrefab);
         newBullet.transform.position = startPosition;
         BulletBehavior bulletComp = newBullet.GetComponent<BulletBehavior>();

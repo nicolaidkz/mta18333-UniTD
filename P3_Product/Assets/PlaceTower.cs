@@ -15,8 +15,8 @@ public class PlaceTower : MonoBehaviour {
     {
         if (tower != null)
         {
-            TowerData monsterData = tower.GetComponent<TowerData>();
-              TowerLevel nextLevel = monsterData.GetNextLevel();
+            TowerData towerData = tower.GetComponent<TowerData>();
+              TowerLevel nextLevel = towerData.GetNextLevel();
             if (nextLevel != null)
             {
                 return true;
