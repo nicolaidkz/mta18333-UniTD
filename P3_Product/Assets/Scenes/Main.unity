@@ -3110,7 +3110,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Waiting for key press.
 --- !u!222 &729606364
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7071,10 +7071,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4af2be188ca3f79488e3f8c3816ba8a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPreFab: {fileID: 4026641801050058, guid: 8490c142a677bc044ac11adb74f600ee,
-    type: 2}
+  waves:
+  - name: 1
+    enemy: {fileID: 4026641801050058, guid: 8490c142a677bc044ac11adb74f600ee, type: 2}
+    enemyCount: 10
+    spawnRate: 10
+  - name: 2
+    enemy: {fileID: 4026641801050058, guid: 8490c142a677bc044ac11adb74f600ee, type: 2}
+    enemyCount: 12
+    spawnRate: 10
+  - name: 3
+    enemy: {fileID: 4026641801050058, guid: 8490c142a677bc044ac11adb74f600ee, type: 2}
+    enemyCount: 20
+    spawnRate: 10
   spawnPoint: {fileID: 1606773929}
-  timeBetweenWaves: 5.5
   waveCountdownText: {fileID: 729606363}
   pythonDebugNotif: {fileID: 270630575}
 --- !u!4 &1691184390
