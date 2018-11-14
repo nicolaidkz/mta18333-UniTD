@@ -9,6 +9,21 @@ public class Enemy : MonoBehaviour {
     private Transform target;
     private int wavepointIndex = 0;
 
+    public float DistanceToGoal()
+    {
+        float distance = 0;
+        distance += Vector2.Distance(
+            gameObject.transform.position,
+            Waypoints.points[wavepointIndex + 1].transform.position);
+        for (int i = wavepointIndex + 1; i < Waypoints.points.Length - 1; i++)
+        {
+            Vector3 startPosition = Waypoints.points[i].transform.position;
+            Vector3 endPosition = Waypoints.points[i + 1].transform.position;
+            distance += Vector2.Distance(startPosition, endPosition);
+        }
+        return distance;
+    }
+
     void Start()
     {
         target = Waypoints.points[0];

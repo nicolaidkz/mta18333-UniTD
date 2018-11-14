@@ -11,12 +11,30 @@ public class PlaceTower : MonoBehaviour {
         return tower == null;
     }
 
+    private bool CanUpgradeTower()
+    {
+        if (tower != null)
+        {
+            TowerData monsterData = tower.GetComponent<TowerData>();
+              TowerLevel nextLevel = monsterData.GetNextLevel();
+            if (nextLevel != null)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     void OnMouseUp()
     {
         if (CanPlaceTower())
         {
             tower = (GameObject)
               Instantiate(towerPrefab, transform.position, Quaternion.identity);
+        }
+        else if (CanUpgradeTower())
+        {
+            tower.GetComponent<TowerData>().IncreaseLevel();
         }
     }
 

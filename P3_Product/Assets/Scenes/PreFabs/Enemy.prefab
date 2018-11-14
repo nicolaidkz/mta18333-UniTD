@@ -23,9 +23,10 @@ GameObject:
   - component: {fileID: 23832523045895756}
   - component: {fileID: 135252307957688868}
   - component: {fileID: 114851739359130686}
+  - component: {fileID: 54555813978774630}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1587469398520224}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.63, y: 1, z: -0.938}
+  m_LocalPosition: {x: -0.63, y: 1.1, z: -0.938}
   m_LocalScale: {x: 125, y: 2, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4026641801050058}
@@ -146,6 +147,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1264620860659130}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54555813978774630
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1264620860659130}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &114310520568577372
 MonoBehaviour:
   m_ObjectHideFlags: 1
