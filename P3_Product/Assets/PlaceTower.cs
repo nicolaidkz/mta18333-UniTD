@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlaceTower : MonoBehaviour {
+public class PlaceTower : MonoBehaviour
+{
+    private CurrencyManagerBehavior currencyManager;
     public GameObject towerPrefab;
     private GameObject tower;
 
     private bool CanPlaceTower()
     {
-        return tower == null;
+        int cost = towerPrefab.GetComponent<TowerData>().levels[0].cost;
+        return tower == null && currencyManager.Currency >= cost;
     }
 
     private bool CanUpgradeTower()
@@ -16,7 +19,7 @@ public class PlaceTower : MonoBehaviour {
         if (tower != null)
         {
             TowerData towerData = tower.GetComponent<TowerData>();
-              TowerLevel nextLevel = towerData.GetNextLevel();
+            TowerLevel nextLevel = towerData.GetNextLevel();
             if (nextLevel != null)
             {
                 return true;
@@ -31,6 +34,7 @@ public class PlaceTower : MonoBehaviour {
         {
             tower = (GameObject)
               Instantiate(towerPrefab, transform.position, Quaternion.identity);
+              currencyManager.Currency -= tower.GetComponent<TowerData>().CurrentLevel.cost;
         }
         else if (CanUpgradeTower())
         {
@@ -39,12 +43,8 @@ public class PlaceTower : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    void Start ()
+    {
+        currencyManager = GameObject.Find("CurrencyManager").GetComponent<CurrencyManagerBehavior>();
+    }
 }
