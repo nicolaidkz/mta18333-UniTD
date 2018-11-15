@@ -15,18 +15,25 @@ public class Enemy : MonoBehaviour
     private Transform target;
     private int wavepointIndex = 0;
 
-    [Header("Unity specific things")]
-    public Image healthBar;
+    public float DistanceToGoal()
+    {
+        float distance = 0;
+        distance += Vector2.Distance(
+            gameObject.transform.position,
+            Waypoints.points[wavepointIndex].transform.position);
+        for (int i = wavepointIndex + 1; i < Waypoints.points.Length - 1; i++)
+        {
+            Vector3 startPosition = Waypoints.points[i].transform.position;
+            Vector3 endPosition = Waypoints.points[i + 1].transform.position;
+            distance += Vector2.Distance(startPosition, endPosition);
+        }
+        return distance;
+    }
 
     void Start()
     {
         target = Waypoints.points[0];
-        health = startHealth;
-    }
-
-    public void TakeDamage(float amount)
-    {
-        healthBar.fillAmount = health / startHealth;
+        
     }
 
     void Update()
