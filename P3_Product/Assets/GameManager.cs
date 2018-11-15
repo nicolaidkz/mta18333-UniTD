@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
     public static bool gameIsOver;
 
     public GameObject gameOverUI;
+    public GameObject victoryScreenUI;
 
     void Start()
     {
@@ -42,6 +43,8 @@ public class GameManager : MonoBehaviour {
     void Victory()
     {
         gameIsOver = true;
+
+        victoryScreenUI.SetActive(true);
         Debug.Log("Victory!");
         // end screen that says victory and perhaps display score and shows play again and menu buttons
         // if play again this has to reset lives, waves and victory boolean in the Playerstats class

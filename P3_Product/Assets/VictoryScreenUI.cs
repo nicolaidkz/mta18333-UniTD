@@ -4,14 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameOver : MonoBehaviour {
+public class VictoryScreenUI : MonoBehaviour {
 
-    public void Retry()
+    public void PlayAgain()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void Menu() {
+    public void Menu()
+    {
         Debug.Log("Go to main menu");
     }
 }
