@@ -8234,15 +8234,15 @@ MonoBehaviour:
   - name: 1
     enemy: {fileID: 4026641801050058, guid: 8490c142a677bc044ac11adb74f600ee, type: 2}
     enemyCount: 10
-    spawnRate: 2
+    spawnRate: 50
   - name: 2
     enemy: {fileID: 4026641801050058, guid: 8490c142a677bc044ac11adb74f600ee, type: 2}
     enemyCount: 12
-    spawnRate: 2
+    spawnRate: 50
   - name: 3
     enemy: {fileID: 4026641801050058, guid: 8490c142a677bc044ac11adb74f600ee, type: 2}
     enemyCount: 20
-    spawnRate: 2
+    spawnRate: 50
   spawnPoint: {fileID: 1606773929}
   waveCountdownText: {fileID: 344958037}
   pythonDebugNotif: {fileID: 270630575}
@@ -8272,6 +8272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startLives: 42
   startWaves: 3
+  startCurrency: 100
 --- !u!114 &1691184392
 MonoBehaviour:
   m_ObjectHideFlags: 0

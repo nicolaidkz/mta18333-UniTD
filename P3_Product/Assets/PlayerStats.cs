@@ -13,6 +13,9 @@ public class PlayerStats : MonoBehaviour {
     public static int waveCounter;
     public int startWaves;
 
+    public static int currency;
+    public int startCurrency = 100;
+
     public static bool victoryDeterminator = false;
 
 	// Use this for initialization
@@ -23,6 +26,8 @@ public class PlayerStats : MonoBehaviour {
         waves = startWaves;
         ofWaves = startWaves;
         waveCounter = 1;
+
+        currency = startCurrency;
 	}
 	
 	// Update is called once per frame
