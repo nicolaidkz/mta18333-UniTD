@@ -15,7 +15,7 @@ public class CurrencyManagerBehavior : MonoBehaviour {
         set
         {
             currency = value;
-            currencyText.GetComponent<Text>().text = "GOLD: " + currency;
+            currencyText.GetComponent<Text>().text = currency + " $";
         }
     }
 
