@@ -47,6 +47,7 @@ public class WaveSpawner : MonoBehaviour
     {
         // and assign the ironPython engine on start
         cvEngine = global::UnityPython.CreateEngine();
+        PlayerStats.victoryDeterminator = false;
     }
 
     void Update()
@@ -67,8 +68,8 @@ public class WaveSpawner : MonoBehaviour
         {
             if (state != SpawnState.Spawning)
             {
-                Debug.Log("Space bare pressed");
-                waveCountdownText.text = "Wave is spawning";
+                Debug.Log("Space bar pressed");
+                waveCountdownText.text = "Wave " + (nextWave + 1).ToString() + " is spawning";
                 StartCoroutine(SpawnWave(waves[nextWave]));
                 state = SpawnState.Waiting;
             }
@@ -93,13 +94,15 @@ public class WaveSpawner : MonoBehaviour
 
         if (nextWave + 1 > waves.Length - 1)
         {
-            waveCountdownText.text = "Victory - Press space to start new game.";
+            waveCountdownText.text = " ";
+            PlayerStats.victoryDeterminator = true;
             nextWave = 0;
-            Debug.Log("All waves complete! Looping back to start...");
+            //Debug.Log("All waves complete! Looping back to start...");
         }
         else
         {
-            waveCountdownText.text = "Wave ended. Waiting for key press.";
+            waveCountdownText.text = "Press space to spawn next wave.";
+            PlayerStats.waveCounter++;
             nextWave++;
         }
     }
@@ -136,6 +139,6 @@ public class WaveSpawner : MonoBehaviour
     void SpawnEnemy(Transform _enemy)
     {
         Instantiate(_enemy, spawnPoint.position, spawnPoint.rotation);
-        Debug.Log("Spawning wave number: " + _enemy.name);
+        //Debug.Log("Spawning wave number: " + _enemy.name);
     }
 }

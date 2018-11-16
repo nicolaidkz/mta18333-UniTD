@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour
     {
         if (wavepointIndex >= Waypoints.points.Length - 1)
         {
-            Destroy(gameObject);
+            EndPath();
             return;
         }
 
@@ -59,4 +59,9 @@ public class Enemy : MonoBehaviour
         target = Waypoints.points[wavepointIndex];
     }
 
+    void EndPath()
+    {
+        PlayerStats.lives--;
+        Destroy(gameObject);
+    }
 }
