@@ -40,6 +40,10 @@ public class WaveSpawner : MonoBehaviour
     public Text waveCountdownText;
     public Text pythonDebugNotif;
 
+    // when between waves this is used to show the text
+    public GameObject betweenWaveTextP1;
+    public GameObject betweenWaveTextP2;
+
     // first we call up the scriptengine
     Microsoft.Scripting.Hosting.ScriptEngine cvEngine;
 
@@ -69,6 +73,8 @@ public class WaveSpawner : MonoBehaviour
             if (state != SpawnState.Spawning)
             {
                 Debug.Log("Space bar pressed");
+                betweenWaveTextP1.SetActive(false);
+                betweenWaveTextP2.SetActive(false);
                 waveCountdownText.text = "Wave " + (nextWave + 1).ToString() + " is spawning";
                 StartCoroutine(SpawnWave(waves[nextWave]));
                 state = SpawnState.Waiting;
@@ -101,6 +107,8 @@ public class WaveSpawner : MonoBehaviour
         }
         else
         {
+            betweenWaveTextP1.SetActive(true);
+            betweenWaveTextP2.SetActive(true);
             waveCountdownText.text = "Press space to spawn next wave.";
             PlayerStats.waveCounter++;
             nextWave++;

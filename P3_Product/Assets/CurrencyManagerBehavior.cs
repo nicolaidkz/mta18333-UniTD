@@ -5,17 +5,17 @@ using UnityEngine.UI;
 
 public class CurrencyManagerBehavior : MonoBehaviour {
     public Text currencyText;
-    private int currency;
+    private int p1Currency;
     public int Currency
     {
         get
         {
-            return currency;
+            return p1Currency;
         }
         set
         {
-            currency = value;
-            currencyText.GetComponent<Text>().text = currency + " $";
+            p1Currency = value;
+            currencyText.GetComponent<Text>().text = "P1 " + p1Currency + " $";
         }
     }
 
