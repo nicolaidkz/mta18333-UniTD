@@ -4,28 +4,14 @@ using UnityEngine;
 
 public class PlaceTower : MonoBehaviour
 {
-    private CurrencyManagerBehavior currencyManager;
+    private PlayerStats GameMaster;
     public GameObject towerPrefab;
     private GameObject tower;
+    public int cost;
 
     private bool CanPlaceTower()
     {
-        int cost = towerPrefab.GetComponent<TowerData>().levels[0].cost;
-        return tower == null && currencyManager.Currency >= cost;
-    }
-
-    private bool CanUpgradeTower()
-    {
-        if (tower != null)
-        {
-            TowerData towerData = tower.GetComponent<TowerData>();
-            TowerLevel nextLevel = towerData.GetNextLevel();
-            if (nextLevel != null)
-            {
-                return true;
-            }
-        }
-        return false;
+        return tower == null && GameMaster.Currency >= cost;
     }
 
     void OnMouseUp()
@@ -34,17 +20,13 @@ public class PlaceTower : MonoBehaviour
         {
             tower = (GameObject)
               Instantiate(towerPrefab, transform.position, Quaternion.identity);
-              currencyManager.Currency -= tower.GetComponent<TowerData>().CurrentLevel.cost;
-        }
-        else if (CanUpgradeTower())
-        {
-            tower.GetComponent<TowerData>().IncreaseLevel();
+              GameMaster.Currency -= cost;
         }
     }
 
     // Use this for initialization
     void Start ()
     {
-        currencyManager = GameObject.Find("CurrencyManager").GetComponent<CurrencyManagerBehavior>();
+        GameMaster = GameObject.Find("GameMaster").GetComponent<PlayerStats>();
     }
 }

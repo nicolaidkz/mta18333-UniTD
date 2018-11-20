@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour {
 
@@ -13,13 +14,25 @@ public class PlayerStats : MonoBehaviour {
     public static int waveCounter;
     public int startWaves;
 
-    public static int currency;
-    public int startCurrency = 100;
-
     public static bool victoryDeterminator = false;
 
-	// Use this for initialization
-	void Start () {
+    public int currency;
+    public Text currencyText;
+    public int Currency
+    {
+        get
+        {
+            return currency;
+        }
+        set
+        {
+            currency = value;
+            currencyText.GetComponent<Text>().text = currency + " $";
+        }
+    }
+
+    // Use this for initialization
+    void Start () {
         lives = startLives;
         ofLives = startLives;
 
@@ -27,7 +40,7 @@ public class PlayerStats : MonoBehaviour {
         ofWaves = startWaves;
         waveCounter = 1;
 
-        currency = startCurrency;
+        currency = Currency;
 	}
 	
 	// Update is called once per frame

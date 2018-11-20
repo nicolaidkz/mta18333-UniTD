@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 23448768942845908}
   - component: {fileID: 135695665709115076}
   - component: {fileID: 114637392925677788}
-  - component: {fileID: 114381788830198300}
   m_Layer: 2
   m_Name: Tower
   m_TagString: Untagged
@@ -86,22 +85,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1850316131398122}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114381788830198300
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1850316131398122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49ca99efc4e8a0646a852e04b0fd52ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levels:
-  - cost: 200
-    visualization: {fileID: 1850316131398122}
-    bullet: {fileID: 1135032751172892, guid: c8983ffd216d9b04c86bb39d63420295, type: 2}
-    fireRate: 1
 --- !u!114 &114637392925677788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesInRange: []
+  bullet: {fileID: 1135032751172892, guid: c8983ffd216d9b04c86bb39d63420295, type: 2}
+  fireRate: 1
 --- !u!135 &135695665709115076
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.4964127, b: 0.57481724, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -284,7 +284,7 @@ Transform:
   - {fileID: 326971593}
   - {fileID: 807025656}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &58137371
 Prefab:
@@ -959,7 +959,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &182573982
 Prefab:
@@ -1692,7 +1692,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &316477520
 Prefab:
@@ -2881,7 +2881,7 @@ Transform:
   m_LocalScale: {x: 9.596998, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
 --- !u!1001 &585146744
 Prefab:
@@ -3503,7 +3503,7 @@ Transform:
   - {fileID: 124634055}
   - {fileID: 942274855}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &712508095
 GameObject:
@@ -3559,7 +3559,7 @@ Transform:
   - {fileID: 1711451676}
   - {fileID: 248815694}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &719440547
 Prefab:
@@ -4160,7 +4160,7 @@ RectTransform:
   m_Children:
   - {fileID: 90578554}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5759,7 +5759,7 @@ RectTransform:
   m_Children:
   - {fileID: 1583852537}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6040,47 +6040,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4709830602829112, guid: ddaaea657732b0444b2a6e994def51cd,
     type: 2}
   m_PrefabInternal: {fileID: 1208142095}
---- !u!1 &1223326749
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1223326751}
-  - component: {fileID: 1223326750}
-  m_Layer: 0
-  m_Name: CurrencyManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1223326750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1223326749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eab9f817332d6a14892d8b9554c57493, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currencyText: {fileID: 1847677093}
---- !u!4 &1223326751
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1223326749}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.1, y: 10.3, z: 22.44}
-  m_LocalScale: {x: 5, y: 4.6712, z: 5}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1237439578
 Prefab:
   m_ObjectHideFlags: 0
@@ -7910,7 +7869,7 @@ Transform:
   m_LocalScale: {x: 5, y: 4, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1612167708
 Prefab:
@@ -8274,14 +8233,17 @@ MonoBehaviour:
   waves:
   - name: 1
     enemy: {fileID: 4026641801050058, guid: 8490c142a677bc044ac11adb74f600ee, type: 2}
+    enemy2: {fileID: 0}
     enemyCount: 10
     spawnRate: 50
   - name: 2
     enemy: {fileID: 4026641801050058, guid: 8490c142a677bc044ac11adb74f600ee, type: 2}
+    enemy2: {fileID: 0}
     enemyCount: 12
     spawnRate: 50
   - name: 3
     enemy: {fileID: 4026641801050058, guid: 8490c142a677bc044ac11adb74f600ee, type: 2}
+    enemy2: {fileID: 0}
     enemyCount: 20
     spawnRate: 50
   spawnPoint: {fileID: 1606773929}
@@ -8313,7 +8275,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startLives: 42
   startWaves: 3
-  startCurrency: 100
+  currency: 400
+  currencyText: {fileID: 1847677093}
 --- !u!114 &1691184392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9184,7 +9147,7 @@ RectTransform:
   - {fileID: 1523044691}
   - {fileID: 856305986}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9273,7 +9236,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1000 $
+  m_Text: 400 $
 --- !u!222 &1847677094
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9519,7 +9482,7 @@ Transform:
   m_LocalScale: {x: 5, y: 4, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1917014832
 Prefab:

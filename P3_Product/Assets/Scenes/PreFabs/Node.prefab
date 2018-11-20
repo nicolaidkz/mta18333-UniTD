@@ -110,3 +110,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerPrefab: {fileID: 1850316131398122, guid: 6fa3504327c561c48abdccecd68157b9,
     type: 2}
+  cost: 200

@@ -64,4 +64,15 @@ public class Enemy : MonoBehaviour
         PlayerStats.lives--;
         Destroy(gameObject);
     }
+
+    public delegate void EnemyDelegate(GameObject enemy);
+    public EnemyDelegate enemyDelegate;
+
+    void OnDestroy()
+    {
+        if (enemyDelegate != null)
+        {
+            enemyDelegate(gameObject);
+        }
+    }
 }
