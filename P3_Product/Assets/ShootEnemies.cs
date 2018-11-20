@@ -25,8 +25,8 @@ public class ShootEnemies : MonoBehaviour {
         if (other.gameObject.tag.Equals("Enemy"))
         {
             enemiesInRange.Add(other.gameObject);
-            EnemyDestruction del =
-                other.gameObject.GetComponent<EnemyDestruction>();
+            Enemy del =
+                other.gameObject.GetComponent<Enemy>();
             del.enemyDelegate += OnEnemyDestroy;
         }
     }
@@ -36,8 +36,8 @@ public class ShootEnemies : MonoBehaviour {
         if (other.gameObject.tag.Equals("Enemy"))
         {
             enemiesInRange.Remove(other.gameObject);
-            EnemyDestruction del =
-                other.gameObject.GetComponent<EnemyDestruction>();
+            Enemy del =
+                other.gameObject.GetComponent<Enemy>();
             del.enemyDelegate -= OnEnemyDestroy;
         }
     }
