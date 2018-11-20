@@ -57,7 +57,6 @@ GameObject:
   - component: {fileID: 135697639549778692}
   - component: {fileID: 114429582440758752}
   - component: {fileID: 54759074826571574}
-  - component: {fileID: 114702967826841334}
   m_Layer: 0
   m_Name: Enemy 2
   m_TagString: Enemy
@@ -189,17 +188,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 5
   startHealth: 100
---- !u!114 &114702967826841334
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1462190964005336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e30a3d38b509bd34db23f2dbccd45dcf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &135697639549778692
 SphereCollider:
   m_ObjectHideFlags: 1

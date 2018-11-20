@@ -27,10 +27,16 @@ public class BulletBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float timeInterval = Time.time - startTime;
-        gameObject.transform.position = Vector3.Lerp(startPosition, targetPosition, timeInterval * speed / distance);
+        if (target == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
-        if (gameObject.transform.position.Equals(targetPosition))
+        Vector3 dir = target.transform.position - transform.position;
+            float distanceThisFrame = speed * Time.deltaTime;
+
+        if (dir.magnitude <= distanceThisFrame)
         {
             if (target != null)
             {
@@ -44,9 +50,11 @@ public class BulletBehavior : MonoBehaviour
                     Destroy(target);
                     GameMaster.Currency += 50;
                 }
+                Destroy(gameObject);
             }
-            Destroy(gameObject);
+
         }
+        transform.Translate(dir.normalized * distanceThisFrame, Space.World);
 
     }
 }
