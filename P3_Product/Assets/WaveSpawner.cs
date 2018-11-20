@@ -128,10 +128,15 @@ public class WaveSpawner : MonoBehaviour
 
         for (int i = 0; i < _wave.enemyCount; i++)
         {
-            SpawnEnemy(_wave.enemy);
-            yield return new WaitForSeconds(1f / _wave.spawnRate);
-            SpawnEnemy2(_wave.enemy2);
-            yield return new WaitForSeconds(1f / _wave.spawnRate);
+            if (i == 4 || i == 8 || i == 12 || i == 16 || i == 20 || i == 24) {
+                SpawnEnemy2(_wave.enemy2);
+                yield return new WaitForSeconds(1f / _wave.spawnRate);
+            }
+            else
+            {
+                SpawnEnemy(_wave.enemy);
+                yield return new WaitForSeconds(1f / _wave.spawnRate);
+            }
         }
 
         state = SpawnState.Waiting;
