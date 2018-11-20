@@ -25,7 +25,7 @@ public class PlaceTower : MonoBehaviour
         }
 
 
-        if (CanPlaceTower())
+        if (CanPlaceTower() && Input.GetMouseButton(1) == false)
         {
             tower = (GameObject) Instantiate(towerPrefab, transform.position, Quaternion.identity);
               GameMaster.Currency -= cost;
