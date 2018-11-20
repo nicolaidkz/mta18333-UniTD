@@ -8279,8 +8279,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startLives: 42
-  startWaves: 3
-  currency: 1000
+  startWaves: 4
+  currency: 600
   currencyText: {fileID: 1847677093}
 --- !u!114 &1691184392
 MonoBehaviour:
@@ -9241,7 +9241,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 400 $
+  m_Text: 600 $
 --- !u!222 &1847677094
 CanvasRenderer:
   m_ObjectHideFlags: 0
