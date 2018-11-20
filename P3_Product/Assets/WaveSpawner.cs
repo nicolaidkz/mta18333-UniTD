@@ -18,6 +18,7 @@ public class WaveSpawner : MonoBehaviour
         // and lastly spawnrate determines how fast the enemy's spawn in
         public string name;
         public Transform enemy;
+        public Transform enemy2;
         public int enemyCount;
         public float spawnRate;
     }
@@ -129,6 +130,8 @@ public class WaveSpawner : MonoBehaviour
         {
             SpawnEnemy(_wave.enemy);
             yield return new WaitForSeconds(1f / _wave.spawnRate);
+            SpawnEnemy2(_wave.enemy2);
+            yield return new WaitForSeconds(1f / _wave.spawnRate);
         }
 
         state = SpawnState.Waiting;
@@ -139,6 +142,11 @@ public class WaveSpawner : MonoBehaviour
     void SpawnEnemy(Transform _enemy)
     {
         Instantiate(_enemy, spawnPoint.position, spawnPoint.rotation);
+        //Debug.Log("Spawning wave number: " + _enemy.name);
+    }
+    void SpawnEnemy2(Transform _enemy2)
+    {
+        Instantiate(_enemy2, spawnPoint.position, spawnPoint.rotation);
         //Debug.Log("Spawning wave number: " + _enemy.name);
     }
 }
