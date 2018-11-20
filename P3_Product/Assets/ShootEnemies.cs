@@ -5,13 +5,14 @@ using UnityEngine;
 public class ShootEnemies : MonoBehaviour {
     public List<GameObject> enemiesInRange;
     private float lastShotTime;
-    private TowerData towerData;
+
+    public GameObject bullet;
+    public float fireRate;
 
     // Use this for initialization
     void Start () {
         enemiesInRange = new List<GameObject>();
         lastShotTime = Time.time;
-        towerData = gameObject.GetComponentInChildren<TowerData>();
     }
 
     private void OnEnemyDestroy(GameObject enemy)
@@ -56,7 +57,7 @@ public class ShootEnemies : MonoBehaviour {
         }
         if (target != null)
         {
-            if (Time.time - lastShotTime > towerData.CurrentLevel.fireRate)
+            if (Time.time - lastShotTime > fireRate)
             {
                 Shoot(target.GetComponent<SphereCollider>());
                 lastShotTime = Time.time;
@@ -66,7 +67,7 @@ public class ShootEnemies : MonoBehaviour {
     }
     private void Shoot(SphereCollider target)
     {
-        GameObject bulletPrefab = towerData.CurrentLevel.bullet;
+        GameObject bulletPrefab = bullet;
         Vector3 startPosition = gameObject.transform.position;
         Vector3 targetPosition = target.transform.position;
         startPosition.y = bulletPrefab.transform.position.y;

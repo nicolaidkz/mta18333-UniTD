@@ -13,15 +13,15 @@ public class BulletBehavior : MonoBehaviour
     private float distance;
     private float startTime;
 
-    private CurrencyManagerBehavior currencyManager;
+    private PlayerStats GameMaster;
 
     // Use this for initialization
     void Start()
     {
         startTime = Time.time;
         distance = Vector2.Distance(startPosition, targetPosition);
-        GameObject gm = GameObject.Find("CurrencyManager");
-        currencyManager = gm.GetComponent<CurrencyManagerBehavior>();
+        GameObject gm = GameObject.Find("GameMaster");
+        GameMaster = gm.GetComponent<PlayerStats>();
     }
 
     // Update is called once per frame
@@ -42,7 +42,7 @@ public class BulletBehavior : MonoBehaviour
                 if (healthBar.currentHealth <= 0)
                 {
                     Destroy(target);
-                    currencyManager.Currency += 50;
+                    GameMaster.Currency += 50;
                 }
             }
             Destroy(gameObject);
