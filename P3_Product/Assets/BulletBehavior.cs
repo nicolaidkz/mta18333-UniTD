@@ -43,11 +43,11 @@ public class BulletBehavior : MonoBehaviour
                 if (healthBar.currentHealth <= 0)
                 {
                     Destroy(target);
-                    if (GameObject.FindWithTag("P1_BulletOne"))
+                    if (GameObject.FindWithTag("P1_BulletOne") || GameObject.FindWithTag("P1_BulletTwo"))
                     {
                         GameMaster.Currency += 50;
                     }
-                    else if (GameObject.FindWithTag("P2_BulletTwo"))
+                    else if (GameObject.FindWithTag("P2_BulletOne") || GameObject.FindWithTag("P2_BulletTwo"))
                     {
                         GameMaster.Currency2 += 50;
                     }
