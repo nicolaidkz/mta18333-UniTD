@@ -73,8 +73,6 @@ public class ShootEnemies : MonoBehaviour {
 // Get start and target position of bullet.
         Vector3 startPosition = gameObject.transform.position;
         Vector3 targetPosition = target.transform.position;
-        startPosition.y = bulletPrefab.transform.position.y;
-        targetPosition.y = bulletPrefab.transform.position.y;
 
 // Instantiate new bullet and assign start and target possition.
         GameObject newBullet = (GameObject)Instantiate(bulletPrefab);
