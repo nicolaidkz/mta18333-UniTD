@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114143436274277294}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: P1_BulletOne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,8 +55,6 @@ MonoBehaviour:
   speed: 20
   damage: 15
   target: {fileID: 1264620860659130, guid: 8490c142a677bc044ac11adb74f600ee, type: 2}
-  startPosition: {x: 0, y: 0, z: 0}
-  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!212 &212682443486254606
 SpriteRenderer:
   m_ObjectHideFlags: 1

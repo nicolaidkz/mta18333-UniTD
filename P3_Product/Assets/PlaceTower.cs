@@ -16,17 +16,17 @@ public class PlaceTower : MonoBehaviour
 // Check if monster variable is null on node and if we have the required cost.
     private bool CanPlaceTower()
     {
-        return tower == null && GameMaster.Currency >= cost;
+        return tower == null && (GameMaster.Currency >= cost || GameMaster.Currency2 >= cost);
         /////!!!!!!!!!!!// TODO. CHECK IF IT IS BETWEEN ROUNDS HERE ///!!!!!!!!!!/////
     }
 // Method run when pressing mouse button down.
     void OnMouseDown()
     {
 // If right mouse button is pressed and CanPlaceTower is true and you have more or equal the cost of tower 2, instantiate tower2prefab and deduct cost.
-        if (Input.GetMouseButton(1) && CanPlaceTower() && GameMaster.Currency >= cost2)
+        if (Input.GetMouseButton(1) && CanPlaceTower() && GameMaster.Currency2 >= cost2)
         {
             tower = (GameObject) Instantiate(towerPrefab2, transform.position, Quaternion.identity);
-            GameMaster.Currency -= cost2;
+            GameMaster.Currency2 -= cost2;
         }
 
 // If CanPlaceTower is true and right mouse is not pressed, instantiate tower1prefab and deduct cost.

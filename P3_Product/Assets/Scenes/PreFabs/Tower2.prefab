@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114354914001189724}
   m_Layer: 2
   m_Name: Tower2
-  m_TagString: Untagged
+  m_TagString: P2_TowerTwo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

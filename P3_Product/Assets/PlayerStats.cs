@@ -20,18 +20,36 @@ public class PlayerStats : MonoBehaviour {
     public static bool victoryDeterminator = false;
 
     // variables that control currency
-    public int currency;
-    public Text currencyText;
+    public int currency1;
+    public int currency2;
+    public Text currencyTextP1;
+    public Text currencyTextP2;
+
     public int Currency
     {
         get
         {
-            return currency; // get currency
+            return currency1; // get currency
         }
         set
         {
-            currency = value;
-            currencyText.GetComponent<Text>().text = currency + " $"; // getcomponent currencyText and set string to currency $
+            currency1 = value;
+
+            currencyTextP1.GetComponent<Text>().text = currency1 + " $"; // getcomponent currencyText and set string to currency $
+        }
+    }
+
+    public int Currency2
+    {
+        get
+        {
+            return currency2; // get currency
+        }
+        set
+        {
+            currency2 = value;
+            
+            currencyTextP2.GetComponent<Text>().text = currency2 + " $"; // getcomponent currencyText and set string to currency $
         }
     }
 
@@ -47,11 +65,9 @@ public class PlayerStats : MonoBehaviour {
         // waveCounter is set to 1 to show that the game starts at wave 1
         waveCounter = 1;
 
-        currency = Currency;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        currency1 = Currency;
+        currency2 = Currency2;
+        currencyTextP1.GetComponent<Text>().text = currency1 + " $";
+        currencyTextP2.GetComponent<Text>().text = currency2 + " $";
+    }
 }
