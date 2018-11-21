@@ -17,6 +17,7 @@ public class PlaceTower : MonoBehaviour
     private bool CanPlaceTower()
     {
         return tower == null && GameMaster.Currency >= cost;
+        /////!!!!!!!!!!!// TODO. CHECK IF IT IS BETWEEN ROUNDS HERE ///!!!!!!!!!!/////
     }
 // Method run when pressing mouse button down.
     void OnMouseDown()

@@ -19,18 +19,19 @@ public class PlayerStats : MonoBehaviour {
 
     public static bool victoryDeterminator = false;
 
+    // variables that control currency
     public int currency;
     public Text currencyText;
     public int Currency
     {
         get
         {
-            return currency;
+            return currency; // get currency
         }
         set
         {
             currency = value;
-            currencyText.GetComponent<Text>().text = currency + " $";
+            currencyText.GetComponent<Text>().text = currency + " $"; // getcomponent currencyText and set string to currency $
         }
     }
 

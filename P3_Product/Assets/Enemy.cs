@@ -5,10 +5,8 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
+// Variables to store health and speed and allow for easy change in inspector.
     public float startSpeed = 10f;
-
-    [HideInInspector]
-
     public float startHealth = 100;
     private float health;
 
@@ -32,8 +30,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        target = Waypoints.points[0];
-        
+        target = Waypoints.points[0];      
     }
 
     void Update()
