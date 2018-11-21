@@ -172,11 +172,11 @@ public class WaveSpawner : MonoBehaviour
         // if we are at wave number 2 and that wave have 20 enemy's then it says 2 < 2.20 in the second part of the for loop and it does this for every wave
         for (int i = 0; i < _wave.enemyCount; i++)
         {
-            if (i == 4 || i == 8 || i == 12 || i == 16 || i == 20 || i == 24) {
+            if (i == 4 || i == 8 || i == 12 || i == 16 || i == 20 || i == 24) { // If i is any of these values, spawn enemy type 2
                 SpawnEnemy2(_wave.enemy2);
                 yield return new WaitForSeconds(1f / _wave.spawnRate);
             }
-            else
+            else // else spawn enemy type 1
             {
                 SpawnEnemy(_wave.enemy);
                 yield return new WaitForSeconds(1f / _wave.spawnRate);

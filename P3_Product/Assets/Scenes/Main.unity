@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.4964127, b: 0.57481724, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4366,7 +4366,7 @@ RectTransform:
   m_Children:
   - {fileID: 90578554}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5965,7 +5965,7 @@ RectTransform:
   m_Children:
   - {fileID: 1583852537}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7317,7 +7317,7 @@ RectTransform:
   m_Children:
   - {fileID: 1433482065}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 90, y: 270, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8434,7 +8434,7 @@ GameObject:
   - component: {fileID: 1641560224}
   - component: {fileID: 1641560223}
   m_Layer: 5
-  m_Name: CurrencyText
+  m_Name: CurrencyTextP2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8599,7 +8599,7 @@ RectTransform:
   m_Children:
   - {fileID: 1667619221}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 90, y: 270, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8856,6 +8856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4af2be188ca3f79488e3f8c3816ba8a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  place: 0
   waves:
   - name: 1
     enemy: {fileID: 4026641801050058, guid: 8490c142a677bc044ac11adb74f600ee, type: 2}
@@ -8908,8 +8909,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startLives: 42
   startWaves: 4
-  currency: 600
-  currencyText: {fileID: 1847677093}
+  currency: 1000
+  currencyTextP1: {fileID: 1847677093}
+  currencyTextP2: {fileID: 1641560224}
 --- !u!114 &1691184392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9799,7 +9801,7 @@ GameObject:
   - component: {fileID: 1847677093}
   - component: {fileID: 1847677092}
   m_Layer: 5
-  m_Name: CurrencyText
+  m_Name: CurrencyTextP1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9869,7 +9871,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 600 $
+  m_Text: 200 $
 --- !u!222 &1847677094
 CanvasRenderer:
   m_ObjectHideFlags: 0
