@@ -1514,7 +1514,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 83.549805, y: -72.8501}
+  m_AnchoredPosition: {x: 83.55078, y: -72.8501}
   m_SizeDelta: {x: 167.09998, y: 145.70001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &270630575
@@ -8909,7 +8909,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startLives: 42
   startWaves: 4
-  currency: 1000
+  currency1: 600
+  currency2: 600
   currencyTextP1: {fileID: 1847677093}
   currencyTextP2: {fileID: 1641560224}
 --- !u!114 &1691184392
@@ -9871,7 +9872,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 200 $
+  m_Text: 222
 --- !u!222 &1847677094
 CanvasRenderer:
   m_ObjectHideFlags: 0

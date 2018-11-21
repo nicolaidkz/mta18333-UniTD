@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - P1_TowerOne
+  - P2_TowerTwo
+  - P1_BulletOne
+  - P2_BulletTwo
   layers:
   - Default
   - TransparentFX
