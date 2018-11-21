@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviour {
     // This is the variable where the game over and victory screen canvas are passed to
     public GameObject gameOverUI;
     public GameObject victoryScreenUI;
+    public GameObject instrctionTextUI;
+    public GameObject sharedStatsUI;
+    public GameObject P1StatsUI;
+    public GameObject P2StatsUI;
 
     // the start method is run once when the script is run, it sets the gameIsOver variable to be false from the start
     void Start()
@@ -41,7 +45,12 @@ public class GameManager : MonoBehaviour {
         gameIsOver = true;
 
         // this sets the gameOverUI canvas to be visible and write a log in the console window that the game was lost.
+        instrctionTextUI.SetActive(false);
+        sharedStatsUI.SetActive(false);
+        P1StatsUI.SetActive(false);
+        P2StatsUI.SetActive(false);
         gameOverUI.SetActive(true);
+        
         Debug.Log("Game over!");
     }
 
@@ -50,7 +59,12 @@ public class GameManager : MonoBehaviour {
         gameIsOver = true;
 
         // this sets the victoryUI canvas to be visible and write a log in the console window that the game was won
+        instrctionTextUI.SetActive(false);
+        sharedStatsUI.SetActive(false);
+        P1StatsUI.SetActive(false);
+        P2StatsUI.SetActive(false);
         victoryScreenUI.SetActive(true);
+        
         Debug.Log("Victory!");
     }
 }

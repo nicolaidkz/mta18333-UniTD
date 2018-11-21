@@ -12,6 +12,6 @@ public class LivesUI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         // here we set the text in the canvas to be the lives variable from the playstats class out of "/" ofLives from playerstats
-        livesText.text = PlayerStats.lives.ToString() + "/" + PlayerStats.ofLives.ToString() + " HP";
+        livesText.text = PlayerStats.lives.ToString() + "/" + PlayerStats.ofLives.ToString();
 	}
 }
