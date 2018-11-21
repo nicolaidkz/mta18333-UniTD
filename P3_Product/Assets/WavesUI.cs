@@ -13,7 +13,7 @@ public class WavesUI : MonoBehaviour {
         for (int i = 1; i <= PlayerStats.ofWaves; i++)
         {
             // this takes the wave we are currently at and write that out of how many total waves we have for each wave in the loop
-            wavesText.text = ((PlayerStats.waves - PlayerStats.waves) + PlayerStats.waveCounter).ToString() + "/" + PlayerStats.ofWaves.ToString() + " Waves";
+            wavesText.text = ((PlayerStats.waves - PlayerStats.waves) + PlayerStats.waveCounter).ToString() + "/" + PlayerStats.ofWaves.ToString();
         }
     }
 }
