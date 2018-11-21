@@ -6,6 +6,7 @@ public class PlaceTower : MonoBehaviour
 {
 // Instantiate copies of the objects and store it so we can manipulate it during the game.
     private PlayerStats GameMaster;
+    private WaveSpawner Wave;
     public GameObject towerPrefab;
     public GameObject towerPrefab2;
     private GameObject tower;
@@ -13,12 +14,12 @@ public class PlaceTower : MonoBehaviour
     public int cost;
     public int cost2;
 
-// Check if monster variable is null on node and if we have the required cost.
+// Check if monster variable is null on node and if we have the required cost and if place is true.
     private bool CanPlaceTower()
     {
-        return tower == null && GameMaster.Currency >= cost;
-        /////!!!!!!!!!!!// TODO. CHECK IF IT IS BETWEEN ROUNDS HERE ///!!!!!!!!!!/////
+        return tower == null && GameMaster.Currency >= cost && Wave.place == true;
     }
+
 // Method run when pressing mouse button down.
     void OnMouseDown()
     {
@@ -32,8 +33,8 @@ public class PlaceTower : MonoBehaviour
 // If CanPlaceTower is true and right mouse is not pressed, instantiate tower1prefab and deduct cost.
         if (CanPlaceTower() && Input.GetMouseButton(1) == false)
         {
-            tower = (GameObject) Instantiate(towerPrefab, transform.position, Quaternion.identity);
-              GameMaster.Currency -= cost;
+                tower = (GameObject) Instantiate(towerPrefab, transform.position, Quaternion.identity);
+                GameMaster.Currency -= cost;
         }
     }
 
@@ -41,5 +42,6 @@ public class PlaceTower : MonoBehaviour
     void Start ()
     {
         GameMaster = GameObject.Find("GameMaster").GetComponent<PlayerStats>();
+        Wave = GameObject.Find("GameMaster").GetComponent<WaveSpawner>();
     }
 }
