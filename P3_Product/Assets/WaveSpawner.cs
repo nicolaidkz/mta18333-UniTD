@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using IronPython.Hosting;
 
+
 public class WaveSpawner : MonoBehaviour
 {
     // This works like boolean variable but instead of only states (true and false) this has 3 states
@@ -50,17 +51,18 @@ public class WaveSpawner : MonoBehaviour
 
     // first we call up the scriptengine
     Microsoft.Scripting.Hosting.ScriptEngine cvEngine;
-
+   
     private void Start()
     {
         // and assign the ironPython engine on start
-        cvEngine = global::UnityPython.CreateEngine();
+        //cvEngine = global::UnityPython.CreateEngine();
+        cvEngine = Python.CreateEngine();
         // the victoryDeterminator is set to false in the start method to make sure that the game starts fresh everytime the scene is loaded which happens when we press retry or play again
         PlayerStats.victoryDeterminator = false;
         // set place to true, since we need to be able to place towers at start of game
         place = true;
     }
-
+    
     void Update()
     {
         // if the spawnState is waiting and the enemy is not alive the wave had been completed and the waveCompleted method is called otherwise it simply returns and since there are stil enemy's on the board
@@ -97,17 +99,36 @@ public class WaveSpawner : MonoBehaviour
                 place = false;
             }
         }
-
+        ICollection<string> paths = cvEngine.GetSearchPaths();
+        
         // This is everything to do with the IronPython
         // adress of script
-        var script = cvEngine.CreateScriptSourceFromFile("Assets/Python/test.py");
+        var script = cvEngine.CreateScriptSourceFromFile("Assets/Python/PythonApplication1.py");
         // scope of script
         var scope = cvEngine.CreateScope();
-        script.Execute(scope);
+        //script.Execute(scope);
         // get variable from script
-        string result = scope.GetVariable<string>("debugText");
+        
+        paths.Add(scope.GetVariable<string>("paths"));
+        paths.Add("H:\\Anaconda\\python36.zip");
+        paths.Add("H:\\Anaconda\\DLLs");
+        paths.Add("H:\\Anaconda\\lib");
+        paths.Add("H:\\Anaconda");
+        paths.Add("H:\\Anaconda\\lib\\site-packages");
+        paths.Add("H:\\Anaconda\\lib\\site-packages\\cv2.cp36-win_amd64");
+        paths.Add("H:\\Anaconda\\lib\\site-packages\\Babel-2.5.0-py3.6.egg");
+        paths.Add("H:\\Anaconda\\lib\\site-packages\\win32");
+        paths.Add("H:\\Anaconda\\lib\\site-packages\\win32\\lib");
+        paths.Add("H:\\Anaconda\\lib\\site-packages\\Pythonwin");
+        paths.Add("H:\\P3_Product\\P3_Product\\Assets\\Python");
+        paths.Add("Assets/Python/IronPython-2.7.8/IronPython.Modules.dll");
+        paths.Add("Assets/Python/IronPython-2.7.8/Microsoft.Scripting.dll");
+        paths.Add("Assets/Python/IronPython-2.7.8/IronPython.dll");
+        cvEngine.SetSearchPaths(paths);
+        int[] result = scope.GetVariable<int[]>("p1t1_array");
         // set variable in text field
-        pythonDebugNotif.text = result;
+        //pythonDebugNotif.text = result;
+        //Debug.Log(result);
     }
 
     // this method is run once the wave is either killed by the towers or the end node and is called in the update method
