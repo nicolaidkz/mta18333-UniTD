@@ -9,6 +9,9 @@ public class WaveSpawner : MonoBehaviour
     // This works like boolean variable but instead of only states (true and false) this has 3 states
     public enum SpawnState { Spawning, Waiting, Counting };
 
+    // true if you are allowed to place towers, false if not.
+    public bool place;
+
     // This creates a headline in the unity inspector with the class wave
     [System.Serializable]
     public class Wave
@@ -54,6 +57,8 @@ public class WaveSpawner : MonoBehaviour
         cvEngine = global::UnityPython.CreateEngine();
         // the victoryDeterminator is set to false in the start method to make sure that the game starts fresh everytime the scene is loaded which happens when we press retry or play again
         PlayerStats.victoryDeterminator = false;
+        // set place to true, since we need to be able to place towers at start of game
+        place = true;
     }
 
     void Update()
@@ -87,6 +92,9 @@ public class WaveSpawner : MonoBehaviour
                 waveCountdownText.text = "Wave " + (nextWave + 1).ToString() + " is spawning";
                 StartCoroutine(SpawnWave(waves[nextWave]));
                 state = SpawnState.Waiting;
+
+                //Set place to false, since wave is starting.
+                place = false;
             }
         }
 
@@ -107,6 +115,9 @@ public class WaveSpawner : MonoBehaviour
     {
         // writes a log to the console that we completed the wave
         Debug.Log("Wave Completed!");
+
+        // Set place to true since we are between waves
+        place = true;
         
         // sets the spawnstate to be counting
         state = SpawnState.Counting;
@@ -161,11 +172,11 @@ public class WaveSpawner : MonoBehaviour
         // if we are at wave number 2 and that wave have 20 enemy's then it says 2 < 2.20 in the second part of the for loop and it does this for every wave
         for (int i = 0; i < _wave.enemyCount; i++)
         {
-            if (i == 4 || i == 8 || i == 12 || i == 16 || i == 20 || i == 24) {
+            if (i == 4 || i == 8 || i == 12 || i == 16 || i == 20 || i == 24) { // If i is any of these values, spawn enemy type 2
                 SpawnEnemy2(_wave.enemy2);
                 yield return new WaitForSeconds(1f / _wave.spawnRate);
             }
-            else
+            else // else spawn enemy type 1
             {
                 SpawnEnemy(_wave.enemy);
                 yield return new WaitForSeconds(1f / _wave.spawnRate);

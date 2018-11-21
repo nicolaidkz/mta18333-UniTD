@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 // this class controls everything that has to do with the players stats such as lives number of waves and the currency.
-public class PlayerStats : MonoBehaviour {
+public class PlayerStats : MonoBehaviour
+{
 
     // this is the variables that controls the players lives/ofLives and the starting lives
     public static int ofLives;
@@ -21,7 +22,9 @@ public class PlayerStats : MonoBehaviour {
 
     // variables that control currency
     public int currency;
-    public Text currencyText;
+    public Text currencyTextP1;
+    public Text currencyTextP2;
+
     public int Currency
     {
         get
@@ -31,12 +34,14 @@ public class PlayerStats : MonoBehaviour {
         set
         {
             currency = value;
-            currencyText.GetComponent<Text>().text = currency + " $"; // getcomponent currencyText and set string to currency $
+            currencyTextP1.GetComponent<Text>().text = currency + " $"; // getcomponent currencyText and set string to currency $
+            currencyTextP2.GetComponent<Text>().text = currency + " $"; // getcomponent currencyText and set string to currency $
         }
     }
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         lives = startLives;
         // same for ofLives
         ofLives = startLives;
@@ -48,10 +53,7 @@ public class PlayerStats : MonoBehaviour {
         waveCounter = 1;
 
         currency = Currency;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        currencyTextP1.GetComponent<Text>().text = currency + " $";
+        currencyTextP2.GetComponent<Text>().text = currency + " $";
+    }
 }
