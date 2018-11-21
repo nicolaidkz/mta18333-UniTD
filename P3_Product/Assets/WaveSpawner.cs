@@ -106,7 +106,7 @@ public class WaveSpawner : MonoBehaviour
         var script = cvEngine.CreateScriptSourceFromFile("Assets/Python/PythonApplication1.py");
         // scope of script
         var scope = cvEngine.CreateScope();
-        //script.Execute(scope);
+        script.Execute(scope);
         // get variable from script
         
         paths.Add(scope.GetVariable<string>("paths"));
