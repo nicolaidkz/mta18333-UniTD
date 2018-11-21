@@ -50,7 +50,7 @@ public class PlayerStats : MonoBehaviour
         {
             currency2 = value;
             
-            currencyTextP2.GetComponent<Text>().text = currency2 + " $"; // getcomponent currencyText and set string to currency $
+            currencyTextP2.GetComponent<Text>().text = "$ " + currency2; // getcomponent currencyText and set string to currency $
         }
     }
 
@@ -70,6 +70,6 @@ public class PlayerStats : MonoBehaviour
         currency1 = Currency;
         currency2 = Currency2;
         currencyTextP1.GetComponent<Text>().text = currency1 + " $";
-        currencyTextP2.GetComponent<Text>().text = currency2 + " $";
+        currencyTextP2.GetComponent<Text>().text = "$ " + currency2;
     }
 }
