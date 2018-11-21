@@ -39,7 +39,7 @@ public class BulletBehavior : MonoBehaviour
                 HealthBar healthBar = healthBarTransform.gameObject.GetComponent<HealthBar>();
                 healthBar.currentHealth -= Mathf.Max(damage);
 
-// If healthbar is less or equal 0, destroy target and award currency.
+// If healthbar is less or equal 0, destroy target and award currency to correct player depending on bullet tag.
                 if (healthBar.currentHealth <= 0)
                 {
                     Destroy(target);

@@ -112,5 +112,9 @@ MonoBehaviour:
     type: 2}
   towerPrefab2: {fileID: 1721868796809948, guid: 1579bf6b10a7f2f4ba6d1fa4e9eddb10,
     type: 2}
+  P2towerPrefab: {fileID: 1904043276638116, guid: edf330361c19f914f8cf73cd723628f4,
+    type: 2}
+  P2towerPrefab2: {fileID: 1738834521317784, guid: 8e0efd5345b1493419e2f37cdc8eac37,
+    type: 2}
   cost: 200
   cost2: 300

@@ -24,33 +24,36 @@ public class PlaceTower : MonoBehaviour
 
 // Method run when pressing mouse button down.
     void OnMouseDown()
-    {
-// If right mouse button is pressed and CanPlaceTower is true and you have more or equal the cost of tower 2, instantiate tower2prefab and deduct cost.
+// Check if place is true so you can not spawn while wave is going
+    { if (Wave.place == true) {
+// Place Player 1 tower 1 and deduct cost
         if (Input.GetMouseButton(1) && CanPlaceTower() && GameMaster.Currency >= cost2 && Input.GetKey("a") == false)
         {
             tower = (GameObject) Instantiate(towerPrefab2, transform.position, Quaternion.identity);
             GameMaster.Currency -= cost2;
         }
 
-// If CanPlaceTower is true and right mouse is not pressed, instantiate tower1prefab and deduct cost.
+// Place Player 1 tower 2 and deduct cost.
         if (CanPlaceTower() && Input.GetMouseButton(1) == false && GameMaster.Currency >= cost && Input.GetKey("a") == false)
         {
                 tower = (GameObject) Instantiate(towerPrefab, transform.position, Quaternion.identity);
                 GameMaster.Currency -= cost;
         }
-        if (Input.GetMouseButton(1) && CanPlaceTower() && GameMaster.Currency2 >= cost2 && Input.GetKey("a"))
+// Place Player 2 tower 1 and deduct cost
+            if (Input.GetMouseButton(1) && CanPlaceTower() && GameMaster.Currency2 >= cost2 && Input.GetKey("a"))
         {
             tower = (GameObject)Instantiate(P2towerPrefab2, transform.position, Quaternion.identity);
             GameMaster.Currency2 -= cost2;
         }
 
-        // If CanPlaceTower is true and right mouse is not pressed, instantiate tower1prefab and deduct cost.
-        if (CanPlaceTower() && Input.GetMouseButton(1) == false && GameMaster.Currency2 >= cost && Input.GetKey("a"))
+// Place Player 2 tower 2 and deduct cost
+            if (CanPlaceTower() && Input.GetMouseButton(1) == false && GameMaster.Currency2 >= cost && Input.GetKey("a"))
         {
             tower = (GameObject)Instantiate(P2towerPrefab, transform.position, Quaternion.identity);
             GameMaster.Currency2 -= cost;
         }
     }
+}
 
 // Access component of GameMaster object, PlayerStats.
     void Start ()

@@ -58,7 +58,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: c64a47cd3772d5945b3946fa25eec87f, type: 2}
+  - {fileID: 2100000, guid: 8e990d95734c55a419534a3336d8aca3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesInRange: []
-  bullet: {fileID: 1135032751172892, guid: c8983ffd216d9b04c86bb39d63420295, type: 2}
+  bullet: {fileID: 1026344840066578, guid: b259ffe12f806bf41adc9f4c056fb6a4, type: 2}
   fireRate: 0.5
 --- !u!135 &135419902899263972
 SphereCollider:
