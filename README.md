@@ -1,2 +1,2 @@
 # P3_Product
-this is hours repository for the code for our semester product
+this is ours repository for the code for our semester product
