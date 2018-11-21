@@ -41,6 +41,10 @@ public class WaveSpawner : MonoBehaviour
     public Text waveCountdownText;
     public Text pythonDebugNotif;
 
+    // when between waves this is used to show the text
+    public GameObject betweenWaveTextP1;
+    public GameObject betweenWaveTextP2;
+
     // first we call up the scriptengine
     Microsoft.Scripting.Hosting.ScriptEngine cvEngine;
 
@@ -48,11 +52,13 @@ public class WaveSpawner : MonoBehaviour
     {
         // and assign the ironPython engine on start
         cvEngine = global::UnityPython.CreateEngine();
+        // the victoryDeterminator is set to false in the start method to make sure that the game starts fresh everytime the scene is loaded which happens when we press retry or play again
         PlayerStats.victoryDeterminator = false;
     }
 
     void Update()
     {
+        // if the spawnState is waiting and the enemy is not alive the wave had been completed and the waveCompleted method is called otherwise it simply returns and since there are stil enemy's on the board
         if (state == SpawnState.Waiting)
         {
             if (!EnemyIsAlive())
@@ -65,17 +71,26 @@ public class WaveSpawner : MonoBehaviour
             }
         }
 
+        // here we spawn the wave of enemy's once the space bar is pressed this is done with the GetKeyDown method
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            // if the spawnState is spawning we first write a log to the console window that let us know that the space bar has been pressed
+            // it then sets the two text canvas's to be invisible
+            // it then write to that same text canvas that the wave # is spawning
+            // it the spawns the wave using the StartCoroutine method which takes in our SpawnWave method which takes in the argument of a wave which in this case is our nextWave variable
+            // lastly it sets our spawnstate to be waiting
             if (state != SpawnState.Spawning)
             {
                 Debug.Log("Space bar pressed");
+                betweenWaveTextP1.SetActive(false);
+                betweenWaveTextP2.SetActive(false);
                 waveCountdownText.text = "Wave " + (nextWave + 1).ToString() + " is spawning";
                 StartCoroutine(SpawnWave(waves[nextWave]));
                 state = SpawnState.Waiting;
             }
         }
 
+        // This is everything to do with the IronPython
         // adress of script
         var script = cvEngine.CreateScriptSourceFromFile("Assets/Python/test.py");
         // scope of script
@@ -87,12 +102,17 @@ public class WaveSpawner : MonoBehaviour
         pythonDebugNotif.text = result;
     }
 
+    // this method is run once the wave is either killed by the towers or the end node and is called in the update method
     void WaveCompleted()
     {
+        // writes a log to the console that we completed the wave
         Debug.Log("Wave Completed!");
-
+        
+        // sets the spawnstate to be counting
         state = SpawnState.Counting;
 
+        // say we have three waves then nextWave will be 0 1 2 and waves.length will be 3 so by adding one to nextwave and subtracting 1 from waves.Length we have 3 > 2 which is true
+        // when this happens the game is over and in this case won so the victoryDeterminator variable from the playerStats class is set to true and the nextWave variable is set to 0 so it's ready for a new game
         if (nextWave + 1 > waves.Length - 1)
         {
             waveCountdownText.text = " ";
@@ -100,19 +120,29 @@ public class WaveSpawner : MonoBehaviour
             nextWave = 0;
             //Debug.Log("All waves complete! Looping back to start...");
         }
+        // otherwise is if there are still more waves left this piece of code is run
+        // first the Text canvas's are set to visible between the waves
+        // then the text is set
+        // then the waveCounter from the playerStats class is incremented
+        // lastly the nextWave variable is incremented
         else
         {
+            betweenWaveTextP1.SetActive(true);
+            betweenWaveTextP2.SetActive(true);
             waveCountdownText.text = "Press space to spawn next wave.";
             PlayerStats.waveCounter++;
             nextWave++;
         }
     }
 
+    // this method determines whether an enemy is alive or not and returns a boolean value
     bool EnemyIsAlive()
     {
         searchCountdown -= Time.deltaTime;
         if (searchCountdown <= 0f)
         {
+            // it searches for any game object with the tag "Enemy" and checks if any of them are alive if not it returns false to let the program know there are no enemy's on the map
+            // other wise it jumps down and return true to signal that there are still enemy's on the map
             searchCountdown = 1f;
             if (GameObject.FindGameObjectWithTag("Enemy") == null)
             {
@@ -122,10 +152,13 @@ public class WaveSpawner : MonoBehaviour
         return true;
     }
 
+    // this method spawns the wave that it is passed as it's arguement when it's called
     IEnumerator SpawnWave(Wave _wave)
     {
+        // sets the spawnstate to spawning
         state = SpawnState.Spawning;
 
+        // if we are at wave number 2 and that wave have 20 enemy's then it says 2 < 2.20 in the second part of the for loop and it does this for every wave
         for (int i = 0; i < _wave.enemyCount; i++)
         {
             if (i == 4 || i == 8 || i == 12 || i == 16 || i == 20 || i == 24) {
@@ -139,13 +172,16 @@ public class WaveSpawner : MonoBehaviour
             }
         }
 
+        // then the spawnstate is set to waiting and then we break from the method. we have to either yield break or yield return since it's an IEnumerator method
         state = SpawnState.Waiting;
 
         yield break;
     }
 
+    // here we spawn the enemy's by passing it a wave and an enemy prefab
     void SpawnEnemy(Transform _enemy)
     {
+        // instantiate's the enemy's that where passed in the spawnPoint Start
         Instantiate(_enemy, spawnPoint.position, spawnPoint.rotation);
         //Debug.Log("Spawning wave number: " + _enemy.name);
     }
