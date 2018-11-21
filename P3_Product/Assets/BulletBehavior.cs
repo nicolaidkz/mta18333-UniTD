@@ -4,29 +4,23 @@ using UnityEngine;
 
 public class BulletBehavior : MonoBehaviour
 {
+// Variables adjustable in inspector to determine bullet speed and damage.
     public float speed = 15;
     public int damage;
+
+// Instantiate copies of the objects and store it so we can manipulate it during the game.
     public GameObject target;
-    public Vector3 startPosition;
-    public Vector3 targetPosition;
-
-    private float distance;
-    private float startTime;
-
     private PlayerStats GameMaster;
 
-    // Use this for initialization
+// Access component of GameMaster object, PlayerStats.
     void Start()
     {
-        startTime = Time.time;
-        distance = Vector2.Distance(startPosition, targetPosition);
-        GameObject gm = GameObject.Find("GameMaster");
-        GameMaster = gm.GetComponent<PlayerStats>();
+        GameMaster = GameObject.Find("GameMaster").GetComponent<PlayerStats>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+// If there is no target, destroy gameObject and return.
         if (target == null)
         {
             Destroy(gameObject);
@@ -34,27 +28,28 @@ public class BulletBehavior : MonoBehaviour
         }
 
         Vector3 dir = target.transform.position - transform.position;
-            float distanceThisFrame = speed * Time.deltaTime;
+        float distanceThisFrame = speed * Time.deltaTime; // Speed * time it took to complete last frame.
 
-        if (dir.magnitude <= distanceThisFrame)
+        if (dir.magnitude <= distanceThisFrame) // If length of vector is lesser or equal to distanceThisFrame
         {
             if (target != null)
             {
+// Retrieve target's healthbar component. Reduce health by bullet's damage.
                 Transform healthBarTransform = target.transform.Find("HealthBar");
-                HealthBar healthBar =
-                    healthBarTransform.gameObject.GetComponent<HealthBar>();
-                healthBar.currentHealth -= Mathf.Max(damage, 10);
+                HealthBar healthBar = healthBarTransform.gameObject.GetComponent<HealthBar>();
+                healthBar.currentHealth -= Mathf.Max(damage);
 
+// If healthbar is less or equal 0, destroy target and award currency.
                 if (healthBar.currentHealth <= 0)
                 {
                     Destroy(target);
                     GameMaster.Currency += 50;
                 }
+// Destroy bullet
                 Destroy(gameObject);
             }
-
         }
+// Moves object forward vector direction, by 1 * distanceThisFrame using world's coordinates.
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
-
     }
 }
