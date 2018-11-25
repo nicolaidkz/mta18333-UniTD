@@ -7,8 +7,10 @@ public class PauseMenu : MonoBehaviour {
 
     public GameObject ui;
 
-	// Use this for initialization
-	void Start () {
+    public string loadMenu = "MainMenu";
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -45,6 +47,6 @@ public class PauseMenu : MonoBehaviour {
 
     public void Menu()
     {
-        Debug.Log("Go to menu!");
+        SceneManager.LoadScene(loadMenu);
     }
 }
