@@ -6,6 +6,8 @@ using IronPython.Hosting;
 
 public class WaveSpawner : MonoBehaviour
 {
+    public GameObject posMaster;
+
     // This works like boolean variable but instead of only states (true and false) this has 3 states
     public enum SpawnState { Spawning, Waiting, Counting };
 
@@ -75,6 +77,10 @@ public class WaveSpawner : MonoBehaviour
         // here we spawn the wave of enemy's once the space bar is pressed this is done with the GetKeyDown method
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            // this is where we initiate the CV to get our positions, TODO: base SpawnState on whether we are done detecting! 
+            
+            var cScript = posMaster.GetComponent<ClientScript>();
+            cScript.GetPosition();
             // if the spawnState is spawning we first write a log to the console window that let us know that the space bar has been pressed
             // it then sets the two text canvas's to be invisible
             // it then write to that same text canvas that the wave # is spawning
@@ -107,6 +113,10 @@ public class WaveSpawner : MonoBehaviour
     // this method is run once the wave is either killed by the towers or the end node and is called in the update method
     void WaveCompleted()
     {
+        // sets our debug text to be "nothing received" again, after a wave is done!
+        var cScript = posMaster.GetComponent<ClientScript>();
+        cScript.debugText.text = "NOTHING RECEIVED!";
+
         // writes a log to the console that we completed the wave
         Debug.Log("Wave Completed!");
 
