@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using IronPython.Hosting;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -45,12 +44,12 @@ public class WaveSpawner : MonoBehaviour
     public Text pythonDebugNotif;
 
     // first we call up the scriptengine
-    Microsoft.Scripting.Hosting.ScriptEngine cvEngine;
+    //Microsoft.Scripting.Hosting.ScriptEngine cvEngine;
 
     private void Start()
     {
         // and assign the ironPython engine on start
-        cvEngine = global::UnityPython.CreateEngine();
+        //cvEngine = global::UnityPython.CreateEngine();
         // the victoryDeterminator is set to false in the start method to make sure that the game starts fresh everytime the scene is loaded which happens when we press retry or play again
         PlayerStats.victoryDeterminator = false;
         // set place to true, since we need to be able to place towers at start of game
@@ -94,14 +93,14 @@ public class WaveSpawner : MonoBehaviour
 
         // This is everything to do with the IronPython
         // adress of script
-        var script = cvEngine.CreateScriptSourceFromFile("Assets/Python/test.py");
+        //var script = cvEngine.CreateScriptSourceFromFile("Assets/Python/test.py");
         // scope of script
-        var scope = cvEngine.CreateScope();
-        script.Execute(scope);
+        //var scope = cvEngine.CreateScope();
+        //script.Execute(scope);
         // get variable from script
-        string result = scope.GetVariable<string>("debugText");
+        //string result = scope.GetVariable<string>("debugText");
         // set variable in text field
-        pythonDebugNotif.text = result;
+        //pythonDebugNotif.text = result;
     }
 
     // this method is run once the wave is either killed by the towers or the end node and is called in the update method
