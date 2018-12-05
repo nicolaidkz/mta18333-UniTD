@@ -15,54 +15,44 @@ OpenCV::~OpenCV()
 }
 
 // Here we detects our webcam and get a live feed from it
-int OpenCV::cameraFeed()
+void OpenCV::cameraFeed()
 {
 	// open the video camera no. 0
 	cv::VideoCapture cap(1);
 
-	// if not successful exit the program.
-	/*if (! cap.isOpened)
+	//// Get the width of frames of the video
+	//double cWidth = cap.get(cv::CAP_PROP_FRAME_WIDTH);
+	//// Get the height of frames of the video
+	//double cHeight = cap.get(cv::CAP_PROP_FRAME_HEIGHT);
+
+	//std::cout << "Frame size: " << cWidth << " x " << cHeight << std::endl;
+
+	cv::Mat frame; cap >> frame;
+
+	//// Read a new frame from the video
+	//bool bSuccess = cap.read(frame);
+
+	//// if not successful break the loop
+	//if (!bSuccess)
+	//{
+	//	std::cout << "Cannot read a frame from video stream" << std::endl;
+	//}
+	//else if (bSuccess)
+	//{
+	//	frame = cap.read(frame);
+	//}
+
+	if (frame.empty())
 	{
-		std::cout << "Cannot open the video cam" << std::endl;
-		return -1;
-	}*/
-
-	// Get the width of frames of the video
-	double cWidth = cap.get(cv::CAP_PROP_FRAME_WIDTH);
-	// Get the height of frames of the video
-	double cHeight = cap.get(cv::CAP_PROP_FRAME_HEIGHT);
-
-	std::cout << "Frame size: " << cWidth << " x " << cHeight << std::endl;
-
-	// Create a window called "videoCapture"
-	cv::namedWindow("videoCapture", cv::WINDOW_AUTOSIZE);
-
-	while (1)
-	{
-		cv::Mat frame;
-
-		// Read a new frame from the video
-		bool bSuccess = cap.read(frame);
-
-		// if not successful break the loop
-		if (!bSuccess)
-		{
-			std::cout << "Cannot read a frame from video stream" << std::endl;
-			break;
-		}
-
-		// Shows the captured frame from the video input in the "videoCapture" window
-		cv::imshow("videoCapture", frame);
-
-		// waits for the 'esc' key to be pressed for 30ms and if it's pressed it breaks the loop
-		if (cv::waitKey(30) == 27)
-		{
-			std::cout << "esc key is pressed by user" << std::endl;
-			break;
-		}
+		std::cerr << "Something is wrong with the webcam, could not get frame." << std::endl;
 	}
+	// Save the frame into a file
+	cv::imwrite("captFrame.jpg", frame); // A JPG FILE IS BEING SAVED
 
-	return 0;
+	OpenCV::img = cv::imread("captFrame.jpg");
+
+	//detectTower(OpenCV::p1t1_kernel, frame);
+
 }
 
 // here is our method for detecting towers,
@@ -81,14 +71,26 @@ void OpenCV::detectTower(cv::Mat kernel, cv::Mat frame)
 	cv::matchTemplate(gFrame, gKernel, result, cv::TM_CCOEFF_NORMED);
 
 	cv::imwrite("result.png", result);
-	//for(pt in zip ) <- no clue how to do this part in c++, also don't know if it's needed! 
+	//for(pt in zip ) <- no clue how to do this part in c++, also don't know if it's needed!
+
+	// imshow for test of method
+	cv::Mat img;
+	
+	img = cv::imread("result.png");
+	std::cout << "Reading..." << std::endl;
+	
+	cv::namedWindow("testW");
+	std::cout << "Creating Window..." << std::endl;
+	
+	cv::imshow("testW", img);
+	std::cout << "Showing Image..." << std::endl;
 }
 
 int OpenCV::displayImageTest()
 {
 	cv::Mat img;
 
-	img = cv::imread("test.jpg");
+	img = cv::imread("template_p1t1.jpg");
 	if (! img.data)
 	{
 		std::cout << "Image not found!" << std::endl;

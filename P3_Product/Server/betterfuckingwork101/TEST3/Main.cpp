@@ -9,17 +9,13 @@
 // we initialize the arrays to hold positions
 // of the four different towers:
 int p1t1[], p1t2[], p2t1[], p2t2[];
-// we might as well initialize the kernels as well:
-// (-2 makes sure we get the original color image)
-cv::Mat p1t1_kernel = cv::imread("path", -2);
-cv::Mat p1t2_kernel = cv::imread("path", -2);
-cv::Mat p2t1_kernel = cv::imread("path", -2);
-cv::Mat p2t2_kernel = cv::imread("path", -2);
 
 int main()
 {
 	OpenCV cvObjectOne;
 	cvObjectOne.cameraFeed();
+	cv::namedWindow("testW");
+	cv::imshow("testW", cvObjectOne.img);
 
 	// first we initialize winsock
 	WSADATA wData;																				// wsastartup data
