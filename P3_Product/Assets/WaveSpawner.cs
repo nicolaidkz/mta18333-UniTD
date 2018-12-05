@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
+    public GameObject posMaster;
+
     // This works like boolean variable but instead of only states (true and false) this has 3 states
     public enum SpawnState { Spawning, Waiting, Counting };
 
@@ -43,13 +45,8 @@ public class WaveSpawner : MonoBehaviour
     public Text waveCountdownText;
     public Text pythonDebugNotif;
 
-    // first we call up the scriptengine
-    //Microsoft.Scripting.Hosting.ScriptEngine cvEngine;
-
     private void Start()
     {
-        // and assign the ironPython engine on start
-        //cvEngine = global::UnityPython.CreateEngine();
         // the victoryDeterminator is set to false in the start method to make sure that the game starts fresh everytime the scene is loaded which happens when we press retry or play again
         PlayerStats.victoryDeterminator = false;
         // set place to true, since we need to be able to place towers at start of game
@@ -74,6 +71,11 @@ public class WaveSpawner : MonoBehaviour
         // here we spawn the wave of enemy's once the space bar is pressed this is done with the GetKeyDown method
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            // this is where we initiate the CV to get our positions. TODO: base spawn state on whether we are detecting.
+
+            var cScript = posMaster.GetComponent<ClientScript>();
+            cScript.GetPosition();
+
             // if the spawnState is spawning we first write a log to the console window that let us know that the space bar has been pressed
             // it then sets the two text canvas's to be invisible
             // it then write to that same text canvas that the wave # is spawning
@@ -90,22 +92,15 @@ public class WaveSpawner : MonoBehaviour
                 place = false;
             }
         }
-
-        // This is everything to do with the IronPython
-        // adress of script
-        //var script = cvEngine.CreateScriptSourceFromFile("Assets/Python/test.py");
-        // scope of script
-        //var scope = cvEngine.CreateScope();
-        //script.Execute(scope);
-        // get variable from script
-        //string result = scope.GetVariable<string>("debugText");
-        // set variable in text field
-        //pythonDebugNotif.text = result;
     }
 
     // this method is run once the wave is either killed by the towers or the end node and is called in the update method
     void WaveCompleted()
     {
+        // set our debug text to be nothing received again after a wave is done!
+        var cScript = posMaster.GetComponent<ClientScript>();
+        cScript.debugText.text = "NOTHING RECEIVED!";
+
         // writes a log to the console that we completed the wave
         Debug.Log("Wave Completed!");
 
