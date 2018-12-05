@@ -3,11 +3,10 @@
 #include<opencv2/imgproc/imgproc.hpp>
 #include<iostream>
 #include<WS2tcpip.h>
+#include "OpenCV.h"
 #pragma comment (lib, "ws2_32.lib")
 
-// we initialize a method for the tower detection
-void detectTower(cv::Mat, cv::Mat);
-// we also initialize the arrays to hold positions
+// we initialize the arrays to hold positions
 // of the four different towers:
 int p1t1[], p1t2[], p2t1[], p2t2[];
 // we might as well initialize the kernels as well:
@@ -19,6 +18,9 @@ cv::Mat p2t2_kernel = cv::imread("path", -2);
 
 int main()
 {
+	OpenCV cvObjectOne;
+	cvObjectOne.cameraFeed();
+
 	// first we initialize winsock
 	WSADATA wData;																				// wsastartup data
 	WORD version = MAKEWORD(2, 2);																// give us version 2.2
@@ -109,25 +111,4 @@ int main()
 	// shutdown/cleanup winsock
 	WSACleanup();
 
-
 }
-
-// here is our method for detecting towers,
-// it takes two arguments: the kernel and the frame 
-void detectTower(cv::Mat kernel, cv::Mat frame) 
-{
-	// we create variables to hold a greyscale versions
-	cv::Mat gKernel;
-	cv::Mat gFrame;
-	// and then we actually convert them to greyscale
-	cv::cvtColor(kernel, gKernel, cv::COLOR_BGR2GRAY);
-	cv::cvtColor(frame, gFrame, cv::COLOR_BGR2GRAY);
-	// we also need a variable for the result of our template matching
-	cv::Mat result;
-	// then we can run the actual matching, using a normed cross-coefficient
-	cv::matchTemplate(gFrame, gKernel, result, cv::TM_CCOEFF_NORMED);
-
-	cv::imwrite("result.png", result);
-	//for(pt in zip ) <- no clue how to do this part in c++, also don't know if it's needed! 
-}
-
