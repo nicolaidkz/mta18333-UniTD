@@ -37,8 +37,8 @@ public class ClientScript : MonoBehaviour
         byte[] message = Encoding.ASCII.GetBytes("TEST");
         stream.Write(message, 0, message.Length);
 
-        return receivedMsg;
-
+        //return receivedMsg;
+        return "308,4";
     }
 
     // callback method that runs when a message is received from the stream

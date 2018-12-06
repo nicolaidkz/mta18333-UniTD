@@ -14,15 +14,17 @@ public class PixelToPosition : MonoBehaviour {
 		
 	}
 
-    string PixelMatch(int x, int y)
+    public string PixelMatch(int x, int y)
     {
-        if (x < 1 && x > 2 && y < 1 && y > 2)
+        Debug.Log("entered Pixelmatch");
+
+        if (x < 415 && x > 307 && y < 113 && y > 2)
         {
             // place at A1
 
             return "A1";
         }
-        else if (x < 1 && x > 2 && y < 1 && y > 2)
+        else if (x < 529 && x > 417 && y < 113 && y > 2)
         {
             // place at A2
             return "A2";

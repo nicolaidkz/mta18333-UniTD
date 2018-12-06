@@ -11,6 +11,8 @@ TagManager:
   - P2_BulletTwo
   - P2_BulletOne
   - P1_BulletTwo
+  - A1
+  - A2
   layers:
   - Default
   - TransparentFX

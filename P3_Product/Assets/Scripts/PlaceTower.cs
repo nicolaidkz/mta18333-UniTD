@@ -32,8 +32,14 @@ public class PlaceTower : MonoBehaviour
 // Place Player 1 tower 1 and deduct cost
         if (Input.GetMouseButton(1) && CanPlaceTower() && GameMaster.Currency >= cost2 && Input.GetKey("a") == false)
         {
+                Debug.Log("entered OnMouseDown");
+                GetPosition();
+               
+                /*
             tower = (GameObject) Instantiate(towerPrefab2, transform.position, Quaternion.identity);
             GameMaster.Currency -= cost2;
+
+                */
         }
 
 // Place Player 1 tower 2 and deduct cost.
@@ -74,13 +80,17 @@ public class PlaceTower : MonoBehaviour
     // we can use this string to place a tower on the correct field! 
     string GetPosition()
     {
+        Debug.Log("entered GetPosition");
         var cScript = posMaster.GetComponent<ClientScript>();
         towerPosition = cScript.GetPosition();
+        Debug.Log("before split: " +towerPosition);
         string[] splitPos = towerPosition.Split(","[0]);
+        Debug.Log("after split: " + splitPos[0] + "," + splitPos[1]);
         int towerX;
         int towerY;
         int.TryParse(splitPos[0], out towerX);
         int.TryParse(splitPos[1], out towerY);
+        Debug.Log("after int conv: " + towerX + "," + towerY);
         SetTower(towerX, towerY);
         return "position is " + towerX + "," + towerY;
     }
@@ -91,21 +101,24 @@ public class PlaceTower : MonoBehaviour
     // position on gameboard (which tile it is on).
     void SetTower(int x, int y)
     {
+        Debug.Log("position is: " + x + "," + y);
         var pScript = posMaster.GetComponent<PixelToPosition>();
         // here we send the x,y in pixels from webcam, to the pixelmatch method
         // which will spit out a string akin to "A1", that we can switch on..
         string tile = pScript.PixelMatch(x, y);
 
-        switch (tile)
+        if (tile != "None")
         {
-            case "A1":
-                // set tower at A1
-                break;
-            case "None":
-                // no viable position found
-                break;
+            // instantiate a tower on tile
+            tower = (GameObject)Instantiate(towerPrefab, GameObject.FindGameObjectWithTag(tile).transform.position, Quaternion.identity);
+            // remove currency from player
+            GameMaster.Currency -= cost;
         }
+        else { Debug.Log("No viable placement"); }
 
         // etc.. we need every possible placement here as ranges of x, y coordinates! 
     }
 }
+
+
+ 
