@@ -21,13 +21,13 @@ public class ClientScript : MonoBehaviour
     public int port = 54000;
 
     // function to request a scan for position of game elements
-    public void GetPosition()
+    public string GetPosition()
     {
 
         if (!client.Connected)
         {
             receivedMsg = "";
-            Debug.Log("client not connected!"); return;
+            Debug.Log("client not connected!"); return "Client not connected, no position!";
         }
         // setup asynchronous read
         var stream = client.GetStream();
@@ -36,6 +36,8 @@ public class ClientScript : MonoBehaviour
         // ask the server for a position (start CV and push back a location)
         byte[] message = Encoding.ASCII.GetBytes("TEST");
         stream.Write(message, 0, message.Length);
+
+        return receivedMsg;
 
     }
 
