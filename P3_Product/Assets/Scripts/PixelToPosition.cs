@@ -40,7 +40,7 @@ public class PixelToPosition : MonoBehaviour {
             Debug.Log("Node"+(i+1)+"s X value is " + xValues[i] + " | Y value is " + yValues[i]);
         }
         
-        if (x < 415 && x > 307 && y < 113 && y > 2)
+        if (x < xValues[91] && x > xValues[90] && y < yValues[91] && y > yValues[90])
         {
             // place at A1
 
