@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.4964127, b: 0.57481724, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667555, g: 0.48427188, b: 0.56452423, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1014,13 +1014,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 170076733}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: -1.41, y: 2.38, z: -2.36}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -31.2, y: 97.6, z: 11.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &182573982
 Prefab:
   m_ObjectHideFlags: 0
@@ -11954,6 +11954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90b35c010a59dad4ca3f0c164634693a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrayPos: []
   debugText: {fileID: 270200267}
   ipAddress: 127.0.0.1
   port: 54000
@@ -11981,6 +11982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 990d6abfd2be82f469179d2e5cebb4c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  posMaster: {fileID: 0}
 --- !u!1001 &1996126652
 Prefab:
   m_ObjectHideFlags: 0
