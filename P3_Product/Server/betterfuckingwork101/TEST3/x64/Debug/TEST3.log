@@ -1,3 +1,2 @@
-﻿  OpenCV.cpp
-c:\users\nicol\documents\gitkraken\p3_product\p3_product\server\betterfuckingwork101\test3\opencv.cpp(103): warning C4715: 'OpenCV::displayImageTest': not all control paths return a value
-  TEST3.vcxproj -> C:\Users\nicol\Documents\Gitkraken\P3_Product\P3_Product\Server\betterfuckingwork101\x64\Debug\TEST3.exe
+﻿  Main.cpp
+  TEST3.vcxproj -> H:\P3_Product\P3_Product\Server\betterfuckingwork101\x64\Debug\TEST3.exe

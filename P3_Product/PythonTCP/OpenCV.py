@@ -5,7 +5,7 @@ import time
 
 class OpenCV:
     # we want second camera in line, since we are expecting a built in webcam
-    device = 1
+    device = 0
     # we want to capture video from device
     capture = cv.VideoCapture(device)
     # template image for player1tower1
@@ -50,4 +50,34 @@ class OpenCV:
             print("something went horribly wrong")
             towerArray_.append([0, 0])
             return towerArray_
+        
+        
+    def detectGrid(frame_):
+        img = frame_
+        img_hsv = cv.cvtColor(img, cv.COLOR_RGB2GRAY)
+        median = cv.medianBlur(img_hsv, 5)
+        gauss_ = cv.GaussianBlur(median, (5, 5), 0)
+        blur = cv.bilateralFilter(gauss_, 9, 75, 75)
+        # brightLAB = cv2.cvtColor(median, cv2.COLOR_BGR2LAB)
+        _, threshold = cv.threshold(blur, 200, 200, cv.THRESH_BINARY)
+        _, contours, _ = cv.findContours(threshold, cv.RETR_TREE, cv.CHAIN_APPROX_NONE)
+
+        rectangle = []
+
+        font = cv.FONT_HERSHEY_COMPLEX
+
+        for cnt in contours:
+            approx = cv.approxPolyDP(cnt, 0.01 * cv.arcLength(cnt, True), True)
+            cv.drawContours(img, [approx], 0, 0, 5)
+            x = approx.ravel()[0]
+            y = approx.ravel()[1]
+
+            if len(approx) == 4:
+                cv.putText(img, "Rectangle", (x, y), font, 1, 0)
+                rectangle.append([x, y])
+
+        print(rectangle)
+
+        return rectangle
+
 

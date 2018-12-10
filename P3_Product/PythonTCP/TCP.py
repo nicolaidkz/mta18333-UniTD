@@ -50,6 +50,13 @@ def handle_client(client_socket):
                     print(stringDataPos)
                     client_socket.send(stringDataPos.encode("utf-8"))
 
+                if data.decode("utf-8") == "GRID":
+                    print("client says:" + data.decode("utf-8"))
+                    gridPos = cvObjectOne.OpenCV.detectGrid(cvObjectOne.OpenCV.testImgP1t1)
+                    print(gridPos)
+                    gridPosStr = str(gridPos)
+                    client_socket.send(gridPosStr.encode("utf-8"))
+
                 # elif data.decode("utf-8") == "p1t2":
                 #
                 #     print("client says: " + data.decode("utf-8"))

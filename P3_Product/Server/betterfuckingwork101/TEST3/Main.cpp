@@ -19,7 +19,7 @@ cv::Mat p2t2_kernel = cv::imread("path", -2);
 int main()
 {
 	OpenCV cvObjectOne;
-	cvObjectOne.cameraFeed();
+	//cvObjectOne.cameraFeed();
 
 	// first we initialize winsock
 	WSADATA wData;																				// wsastartup data
