@@ -23,7 +23,7 @@ public class PixelToPosition : MonoBehaviour {
         int[] xValues = new int[120];
         int[] yValues = new int[120];
 
-        Debug.Log("SANITY IS: " + cScript.arrayPos[0]);
+        //Debug.Log("SANITY IS: " + cScript.arrayPos[0]);
         int tempX;
         int tempY;
         string[] tempCoords;

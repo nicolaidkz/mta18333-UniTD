@@ -57,33 +57,6 @@ def handle_client(client_socket):
                     gridPosStr = str(gridPos)
                     client_socket.send(gridPosStr.encode("utf-8"))
 
-                # elif data.decode("utf-8") == "p1t2":
-                #
-                #     print("client says: " + data.decode("utf-8"))
-                #     xyPosP1T2 = cvObjectOne.OpenCV.detectShape(cvObjectOne.OpenCV.template_p1t2, cvObjectOne.OpenCV.testImgP1t1, cvObjectOne.OpenCV.p1t2_array)
-                #     print(xyPosP1T2)
-                #     stringPosP1t2 = str(xyPosP1T2)
-                #     print(stringPosP1t2)
-                #     client_socket.send(stringPosP1t2.encode("utf-8"))
-                #
-                # elif data.decode("utf-8") == "p2t1":
-                #
-                #     print("client says: " + data.decode("utf-8"))
-                #     xyPosP2T1 = cvObjectOne.OpenCV.detectShape(cvObjectOne.OpenCV.template_p2t1, cvObjectOne.OpenCV.testImgP1t1, cvObjectOne.OpenCV.p2t1_array)
-                #     print(xyPosP2T1)
-                #     stringPosP2t1 = str(xyPosP2T1)
-                #     print(stringPosP2t1)
-                #     client_socket.send(stringPosP2t1.encode("utf-8"))
-                #
-                # elif data.decode("utf-8") == "p2t2":
-                #
-                #     print("client says: " + data.decode("utf-8"))
-                #     xyPosP2T2 = cvObjectOne.OpenCV.detectShape(cvObjectOne.OpenCV.template_p2t2, cvObjectOne.OpenCV.testImgP1t1, cvObjectOne.OpenCV.p2t2_array)
-                #     print(xyPosP2T2)
-                #     stringPosP2t2 = str(xyPosP2T2)
-                #     print(stringPosP2t2)
-                #     client_socket.send(stringPosP2t2.encode("utf-8"))
-
             except socket.error:
                 print("Error Occured.")
                 break

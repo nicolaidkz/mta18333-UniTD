@@ -18,7 +18,7 @@ public class PlaceTower : MonoBehaviour
     public int cost2;
     public string towerPosition;
 
-// Check if monster variable is null on node and if we have the required cost and if place is true.
+    // Check if monster variable is null on node and if we have the required cost and if place is true.
     private bool CanPlaceTower()
     {
         return tower == null;
@@ -84,15 +84,39 @@ public class PlaceTower : MonoBehaviour
         var cScript = posMaster.GetComponent<ClientScript>();
         towerPosition = cScript.GetPosition();
         Debug.Log("before split: " +towerPosition);
-        string[] splitPos = towerPosition.Split(","[0]);
-        Debug.Log("after split: " + splitPos[0] + "," + splitPos[1]);
-        int towerX;
-        int towerY;
-        int.TryParse(splitPos[0], out towerX);
-        int.TryParse(splitPos[1], out towerY);
-        Debug.Log("after int conv: " + towerX + "," + towerY);
-        SetTower(towerX, towerY);
-        return "position is " + towerX + "," + towerY;
+
+        string tempTowerPos = towerPosition.Replace("[", string.Empty);
+        Debug.Log("after [ removal: " + tempTowerPos);
+
+        string temp2TowerPos = tempTowerPos.Replace("]]", string.Empty);
+        Debug.Log("after ]] removal: " + temp2TowerPos);
+
+        string temp3TowerPos = temp2TowerPos.Replace("],", ":");
+        Debug.Log("after ], removal: " + temp3TowerPos);
+
+        string[] towerArrayPos = temp3TowerPos.Split(":"[0]);
+        Debug.Log("after splitting it into array positions pos 0: " + towerArrayPos[0] + " pos 1: " + towerArrayPos[1] + " pos 2: " + towerArrayPos[2] + " pos 3: " + towerArrayPos[3]);
+
+        string[] splitPosP1T1 = towerArrayPos[0].Split(","[0]);
+        Debug.Log("after splitting pos 0 into P1T1 pos 0: " + splitPosP1T1[0] + " and pos 1: " + splitPosP1T1[1]);
+
+        string[] splitPosP1T2 = towerArrayPos[1].Split(","[0]);
+        Debug.Log("after splitting pos 1 into P1T2 pos 0: " + splitPosP1T2[0] + " and pos 1: " + splitPosP1T2[1]);
+
+        string[] splitPosP2T1 = towerArrayPos[2].Split(","[0]);
+        Debug.Log("after splitting pos 2 into P2T1 pos 0: " + splitPosP2T1[0] + " and pos 1: " + splitPosP2T1[1]);
+
+        string[] splitPosP2T2 = towerArrayPos[3].Split(","[0]);
+        Debug.Log("after splitting pos 3 into P2T2 pos 0: " + splitPosP2T2[0] + " and pos 1: " + splitPosP2T2[1]);
+
+
+        int towerP1T1X;
+        int towerP1T1Y;
+        int.TryParse(splitPosP1T1[0], out towerP1T1X);
+        int.TryParse(splitPosP1T1[1], out towerP1T1Y);
+        Debug.Log("after int conv: " + towerP1T1X + "," + towerP1T1Y);
+        SetTower(towerP1T1X, towerP1T1Y);
+        return "position is " + towerP1T1X + "," + towerP1T1Y;
     }
 
 

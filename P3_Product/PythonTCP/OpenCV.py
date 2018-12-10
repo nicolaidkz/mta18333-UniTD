@@ -28,6 +28,8 @@ class OpenCV:
 
 
     def detectShape(template_, frame_, towerArray_):
+        towerArray_.clear()
+
         # empty space to return "nothing found"
         gray_img = cv.cvtColor(frame_, cv.COLOR_BGR2GRAY)   # convert image to grayscale
         template = cv.cvtColor(template_, cv.COLOR_BGR2GRAY)  # convert template to grayscale
