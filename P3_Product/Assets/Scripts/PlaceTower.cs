@@ -78,10 +78,12 @@ public class PlaceTower : MonoBehaviour
     // turn matches those coordinates to a field on the gameboard, and returns another string
     // in the form of a letter and a number, e.g. "A1" for the very first field.
     // we can use this string to place a tower on the correct field! 
-    string GetPosition()
+    void GetPosition()
     {
         Debug.Log("entered GetPosition");
         var cScript = posMaster.GetComponent<ClientScript>();
+        // SOMETHING HERE TO MAKE SURE WE HAVE A MESSAGE BEFORE PROCEEDING
+        
         towerPosition = cScript.GetPosition();
         Debug.Log("before split: " +towerPosition);
 
@@ -110,13 +112,16 @@ public class PlaceTower : MonoBehaviour
         Debug.Log("after splitting pos 3 into P2T2 pos 0: " + splitPosP2T2[0] + " and pos 1: " + splitPosP2T2[1]);
 
 
-        int towerP1T1X;
-        int towerP1T1Y;
+        int towerP1T1X, towerP1T2X;
+        int towerP1T1Y, towerP1T2Y;
         int.TryParse(splitPosP1T1[0], out towerP1T1X);
         int.TryParse(splitPosP1T1[1], out towerP1T1Y);
+        int.TryParse(splitPosP1T2[0], out towerP1T2X);
+        int.TryParse(splitPosP1T2[1], out towerP1T2Y);
         Debug.Log("after int conv: " + towerP1T1X + "," + towerP1T1Y);
         SetTower(towerP1T1X, towerP1T1Y);
-        return "position is " + towerP1T1X + "," + towerP1T1Y;
+        SetTower(towerP1T2X, towerP1T2Y);
+        //return "position is " + towerP1T1X + "," + towerP1T1Y;
     }
 
 
@@ -130,7 +135,7 @@ public class PlaceTower : MonoBehaviour
         // here we send the x,y in pixels from webcam, to the pixelmatch method
         // which will spit out a string akin to "A1", that we can switch on..
         string tile = pScript.PixelMatch(x, y);
-
+        Debug.Log(tile);
         if (tile != "None")
         {
             // instantiate a tower on tile

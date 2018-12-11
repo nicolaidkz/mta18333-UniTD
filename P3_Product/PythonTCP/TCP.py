@@ -36,16 +36,17 @@ def handle_client(client_socket):
                 if not data: break
 
                 if data.decode("utf-8") == "TOWER":
-
+                    cvObjectOne.OpenCV.clearArrays(cvObjectOne.OpenCV.p1t1_array, cvObjectOne.OpenCV.p1t2_array, cvObjectOne.OpenCV.p2t1_array, cvObjectOne.OpenCV.p2t2_array)
                     print("client says: " + data.decode("utf-8"))
+
                     xyPosP1T1 = cvObjectOne.OpenCV.detectShape(cvObjectOne.OpenCV.template_p1t1, cvObjectOne.OpenCV.testImgP1t1, cvObjectOne.OpenCV.p1t1_array)
-                    print(xyPosP1T1)
+                    #print(xyPosP1T1)
                     xyPosP1T2 = cvObjectOne.OpenCV.detectShape(cvObjectOne.OpenCV.template_p1t2, cvObjectOne.OpenCV.testImgP1t1, cvObjectOne.OpenCV.p1t2_array)
-                    print(xyPosP1T2)
+                    #print(xyPosP1T2)
                     xyPosP2T1 = cvObjectOne.OpenCV.detectShape(cvObjectOne.OpenCV.template_p2t1, cvObjectOne.OpenCV.testImgP1t1, cvObjectOne.OpenCV.p2t1_array)
-                    print(xyPosP2T1)
+                    #print(xyPosP2T1)
                     xyPosP2T2 = cvObjectOne.OpenCV.detectShape(cvObjectOne.OpenCV.template_p2t2, cvObjectOne.OpenCV.testImgP1t1, cvObjectOne.OpenCV.p2t2_array)
-                    print(xyPosP2T2)
+                    #print(xyPosP2T2)
                     stringDataPos = str(xyPosP1T1 + xyPosP1T2 + xyPosP2T1 + xyPosP2T2)
                     print(stringDataPos)
                     client_socket.send(stringDataPos.encode("utf-8"))
@@ -72,3 +73,4 @@ while True:
 
         client_handler = threading.Thread(target=handle_client,args=(client,))
         client_handler.start()
+

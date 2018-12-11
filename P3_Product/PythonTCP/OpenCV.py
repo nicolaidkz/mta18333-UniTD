@@ -28,7 +28,7 @@ class OpenCV:
 
 
     def detectShape(template_, frame_, towerArray_):
-        towerArray_.clear()
+
 
         # empty space to return "nothing found"
         gray_img = cv.cvtColor(frame_, cv.COLOR_BGR2GRAY)   # convert image to grayscale
@@ -81,5 +81,12 @@ class OpenCV:
         print(rectangle)
 
         return rectangle
+
+
+    def clearArrays(ar1, ar2, ar3, ar4):
+        ar1.clear()
+        ar2.clear()
+        ar3.clear()
+        ar4.clear()
 
 
