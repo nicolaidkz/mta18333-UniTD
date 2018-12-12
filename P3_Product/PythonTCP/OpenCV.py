@@ -5,7 +5,7 @@ import time
 
 class OpenCV:
     # we want second camera in line, since we are expecting a built in webcam
-    device = 0
+    device = 1
     # we want to capture video from device
     capture = cv.VideoCapture(device)
     # template image for player1tower1
@@ -22,7 +22,11 @@ class OpenCV:
     # path of the saved image
     file_name = "testing.png"
     # save image to path
-    cv.imwrite(file_name, frame)
+
+    gray_img = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)  # convert image to grayscale
+    aTH = cv.adaptiveThreshold(gray_img, 200, cv.ADAPTIVE_THRESH_MEAN_C, cv.THRESH_BINARY, 41, 8)
+
+    cv.imwrite(file_name, aTH)
     # load image as variable testImg
     testImgP1t1 = cv.imread(file_name)
 
@@ -33,16 +37,17 @@ class OpenCV:
         # empty space to return "nothing found"
         gray_img = cv.cvtColor(frame_, cv.COLOR_BGR2GRAY)   # convert image to grayscale
         template = cv.cvtColor(template_, cv.COLOR_BGR2GRAY)  # convert template to grayscale
-        _, aTH = cv.adaptiveThreshold(gray_img, 200, cv.ADAPTIVE_THRESH_MEAN_C, cv.THRESH_BINARY, 41, 8)
-        bTemp = cv.threshold(template, 200,200,cv.THRESH_BINARY)
+        aTH = cv.adaptiveThreshold(gray_img, 200, cv.ADAPTIVE_THRESH_MEAN_C, cv.THRESH_BINARY, 41, 8)
+        _,bTemp = cv.threshold(template, 100, 200, cv.THRESH_BINARY)
+        cv.imwrite("templateEx.jpg", bTemp)
+        cv.imwrite("realImg.jpg", aTH)
 
-
-        result = cv.matchTemplate(aTH, bTemp, cv.TM_CCOEFF_NORMED)      # run the template matching and save as result
-        print("template matching..")
+        result = cv.matchTemplate(aTH, bTemp, cv.TM_CCOEFF_NORMED) # run the template matching and save as result
+        # print("template matching..")
         # debug for visible representation of detection
         print("displaying match at position: ")
         w, h = template.shape[::-1]                         # x and y coordinates of detected object
-        location = np.where(result >= 0.68)                  # 0.7 is accuracy used when finding position???
+        location = np.where(result >= 0.65)                  # 0.7 is accuracy used when finding position???
                                                             # return x and y coordinates of detected object
 
         for pt in zip(*location[::-1]):
