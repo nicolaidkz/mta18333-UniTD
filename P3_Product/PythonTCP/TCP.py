@@ -19,11 +19,11 @@ bind_port = 54000
 # This listens on the ip address and when ever a connection comes in it's going to accept
 # the connection
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind((bind_ip,bind_port))
+server.bind((bind_ip, bind_port))
 server.listen(5)
 
 # prints that we are listening on the aforementioned ip and port
-print("[+] listening on %s:%d" % (bind_ip,bind_port))
+print("[+] listening on %s:%d" % (bind_ip, bind_port))
 
 
 def handle_client(client_socket):
@@ -36,16 +36,17 @@ def handle_client(client_socket):
                 if not data: break
 
                 if data.decode("utf-8") == "TOWER":
-
+                    cvObjectOne.OpenCV.clearArrays(cvObjectOne.OpenCV.p1t1_array, cvObjectOne.OpenCV.p1t2_array, cvObjectOne.OpenCV.p2t1_array, cvObjectOne.OpenCV.p2t2_array)
                     print("client says: " + data.decode("utf-8"))
+                    cvObjectOne.OpenCV.testImgP1t1 = cvObjectOne.OpenCV.capture.read()[1]
                     xyPosP1T1 = cvObjectOne.OpenCV.detectShape(cvObjectOne.OpenCV.template_p1t1, cvObjectOne.OpenCV.testImgP1t1, cvObjectOne.OpenCV.p1t1_array)
-                    print(xyPosP1T1)
+                    #print(xyPosP1T1)
                     xyPosP1T2 = cvObjectOne.OpenCV.detectShape(cvObjectOne.OpenCV.template_p1t2, cvObjectOne.OpenCV.testImgP1t1, cvObjectOne.OpenCV.p1t2_array)
-                    print(xyPosP1T2)
+                    #print(xyPosP1T2)
                     xyPosP2T1 = cvObjectOne.OpenCV.detectShape(cvObjectOne.OpenCV.template_p2t1, cvObjectOne.OpenCV.testImgP1t1, cvObjectOne.OpenCV.p2t1_array)
-                    print(xyPosP2T1)
+                    #print(xyPosP2T1)
                     xyPosP2T2 = cvObjectOne.OpenCV.detectShape(cvObjectOne.OpenCV.template_p2t2, cvObjectOne.OpenCV.testImgP1t1, cvObjectOne.OpenCV.p2t2_array)
-                    print(xyPosP2T2)
+                    #print(xyPosP2T2)
                     stringDataPos = str(xyPosP1T1 + xyPosP1T2 + xyPosP2T1 + xyPosP2T2)
                     print(stringDataPos)
                     client_socket.send(stringDataPos.encode("utf-8"))
@@ -57,33 +58,6 @@ def handle_client(client_socket):
                     gridPosStr = str(gridPos)
                     client_socket.send(gridPosStr.encode("utf-8"))
 
-                # elif data.decode("utf-8") == "p1t2":
-                #
-                #     print("client says: " + data.decode("utf-8"))
-                #     xyPosP1T2 = cvObjectOne.OpenCV.detectShape(cvObjectOne.OpenCV.template_p1t2, cvObjectOne.OpenCV.testImgP1t1, cvObjectOne.OpenCV.p1t2_array)
-                #     print(xyPosP1T2)
-                #     stringPosP1t2 = str(xyPosP1T2)
-                #     print(stringPosP1t2)
-                #     client_socket.send(stringPosP1t2.encode("utf-8"))
-                #
-                # elif data.decode("utf-8") == "p2t1":
-                #
-                #     print("client says: " + data.decode("utf-8"))
-                #     xyPosP2T1 = cvObjectOne.OpenCV.detectShape(cvObjectOne.OpenCV.template_p2t1, cvObjectOne.OpenCV.testImgP1t1, cvObjectOne.OpenCV.p2t1_array)
-                #     print(xyPosP2T1)
-                #     stringPosP2t1 = str(xyPosP2T1)
-                #     print(stringPosP2t1)
-                #     client_socket.send(stringPosP2t1.encode("utf-8"))
-                #
-                # elif data.decode("utf-8") == "p2t2":
-                #
-                #     print("client says: " + data.decode("utf-8"))
-                #     xyPosP2T2 = cvObjectOne.OpenCV.detectShape(cvObjectOne.OpenCV.template_p2t2, cvObjectOne.OpenCV.testImgP1t1, cvObjectOne.OpenCV.p2t2_array)
-                #     print(xyPosP2T2)
-                #     stringPosP2t2 = str(xyPosP2T2)
-                #     print(stringPosP2t2)
-                #     client_socket.send(stringPosP2t2.encode("utf-8"))
-
             except socket.error:
                 print("Error Occured.")
                 break
@@ -93,9 +67,10 @@ def handle_client(client_socket):
 
 while True:
 
-        client,addr = server.accept()
-        print("[+] Accepting connection from: %s:%d" % (addr[0],addr[1]))
-        print("[+] Establishing a connection from %s:%d" % (addr[0],addr[1]))
+        client, addr = server.accept()
+        print("[+] Accepting connection from: %s:%d" % (addr[0], addr[1]))
+        print("[+] Establishing a connection from %s:%d" % (addr[0], addr[1]))
 
-        client_handler = threading.Thread(target=handle_client,args=(client,))
+        client_handler = threading.Thread(target=handle_client, args=(client,))
         client_handler.start()
+

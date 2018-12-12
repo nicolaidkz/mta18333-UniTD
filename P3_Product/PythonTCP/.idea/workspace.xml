@@ -7,21 +7,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenCV.py" beforeDir="false" afterPath="$PROJECT_DIR$/OpenCV.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TCP.py" beforeDir="false" afterPath="$PROJECT_DIR$/TCP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_p1t1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/template_p1t1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_p1t2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/template_p1t2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_p2t1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/template_p2t1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_p2t2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/template_p2t2.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testing.png" beforeDir="false" afterPath="$PROJECT_DIR$/testing.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/betterfuckingwork101/TEST3/Main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/betterfuckingwork101/TEST3/Main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/betterfuckingwork101/TEST3/x64/Debug/Main.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/betterfuckingwork101/TEST3/x64/Debug/Main.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/betterfuckingwork101/TEST3/x64/Debug/OpenCV.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/betterfuckingwork101/TEST3/x64/Debug/OpenCV.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/betterfuckingwork101/TEST3/x64/Debug/TEST3.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/betterfuckingwork101/TEST3/x64/Debug/TEST3.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/betterfuckingwork101/TEST3/x64/Debug/TEST3.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/betterfuckingwork101/TEST3/x64/Debug/TEST3.tlog/CL.command.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/betterfuckingwork101/TEST3/x64/Debug/TEST3.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/betterfuckingwork101/TEST3/x64/Debug/TEST3.tlog/CL.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/betterfuckingwork101/TEST3/x64/Debug/TEST3.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/betterfuckingwork101/TEST3/x64/Debug/TEST3.tlog/CL.write.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/betterfuckingwork101/TEST3/x64/Debug/TEST3.tlog/TEST3.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/betterfuckingwork101/TEST3/x64/Debug/TEST3.tlog/TEST3.lastbuildstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/betterfuckingwork101/TEST3/x64/Debug/TEST3.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/betterfuckingwork101/TEST3/x64/Debug/TEST3.tlog/link.command.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/betterfuckingwork101/TEST3/x64/Debug/TEST3.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/betterfuckingwork101/TEST3/x64/Debug/TEST3.tlog/link.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/betterfuckingwork101/TEST3/x64/Debug/TEST3.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/betterfuckingwork101/TEST3/x64/Debug/TEST3.tlog/link.write.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/betterfuckingwork101/TEST3/x64/Debug/vc141.idb" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/betterfuckingwork101/TEST3/x64/Debug/vc141.idb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/betterfuckingwork101/x64/Debug/TEST3.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/betterfuckingwork101/x64/Debug/TEST3.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/betterfuckingwork101/x64/Debug/TEST3.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/betterfuckingwork101/x64/Debug/TEST3.ilk" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,29 +55,65 @@
         <counts>
           <entry key="project.closed" value="1" />
           <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="78" />
+          <entry key="py" value="316" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="78" />
+          <entry key="Python" value="316" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="884800036">
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="13" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="13" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="152122431">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="180" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="180" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TCP.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+              <caret line="40" column="89" lean-forward="true" selection-start-line="40" selection-start-column="89" selection-end-line="40" selection-end-column="89" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -95,11 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/OpenCV.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="55" column="20" lean-forward="true" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
+            <state relative-caret-position="374">
+              <caret line="49" column="42" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -116,22 +142,26 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>camera</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/OpenCV.py" />
         <option value="$PROJECT_DIR$/TCP.py" />
+        <option value="$PROJECT_DIR$/OpenCV.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="166" />
-    <option name="y" value="131" />
-    <option name="width" value="1416" />
-    <option name="height" value="784" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="952" />
+    <option name="width" value="975" />
+    <option name="height" value="1058" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -226,15 +256,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="364" y="149" width="1416" height="784" extended-state="0" />
+    <frame x="1273" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24963716" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.07931262" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3276923" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22978723" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -260,22 +290,22 @@
     <entry file="file://$PROJECT_DIR$/1.0 py files/OpenCV_1.0.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/OpenCV.py">
+    <entry file="file://$PROJECT_DIR$/TCP.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="55" column="20" lean-forward="true" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
+        <state relative-caret-position="221">
+          <caret line="40" column="89" lean-forward="true" selection-start-line="40" selection-start-column="89" selection-end-line="40" selection-end-column="89" />
           <folding>
-            <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TCP.py">
+    <entry file="file://$PROJECT_DIR$/OpenCV.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+        <state relative-caret-position="374">
+          <caret line="49" column="42" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#16#0" expanded="true" />
           </folding>
         </state>
       </provider>
