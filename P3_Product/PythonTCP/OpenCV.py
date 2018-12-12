@@ -18,7 +18,7 @@ class OpenCV:
     template_p2t1 = cv.imread("template_p2t1.jpg")
     template_p2t2 = cv.imread("template_p2t2.jpg")
     # we grab and retrieve one single frame, and save it as frame
-    frame = capture.read()[1]
+    frame = capture.read()[device]
     # path of the saved image
     file_name = "testing.png"
     # save image to path
@@ -33,13 +33,16 @@ class OpenCV:
         # empty space to return "nothing found"
         gray_img = cv.cvtColor(frame_, cv.COLOR_BGR2GRAY)   # convert image to grayscale
         template = cv.cvtColor(template_, cv.COLOR_BGR2GRAY)  # convert template to grayscale
+        _, aTH = cv.adaptiveThreshold(gray_img, 200, cv.ADAPTIVE_THRESH_MEAN_C, cv.THRESH_BINARY, 41, 8)
+        bTemp = cv.threshold(template, 200,200,cv.THRESH_BINARY)
 
-        result = cv.matchTemplate(gray_img, template, cv.TM_CCOEFF_NORMED)      # run the template matching and save as result
+
+        result = cv.matchTemplate(aTH, bTemp, cv.TM_CCOEFF_NORMED)      # run the template matching and save as result
         print("template matching..")
         # debug for visible representation of detection
         print("displaying match at position: ")
         w, h = template.shape[::-1]                         # x and y coordinates of detected object
-        location = np.where(result >= 0.7)                  # 0.7 is accuracy used when finding position???
+        location = np.where(result >= 0.68)                  # 0.7 is accuracy used when finding position???
                                                             # return x and y coordinates of detected object
 
         for pt in zip(*location[::-1]):
