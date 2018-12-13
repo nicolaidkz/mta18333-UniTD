@@ -150,13 +150,13 @@ public class PlaceTower : MonoBehaviour
        if (tile != "None")
        {
             // instantiate a tower on tile
-            if (type.Equals("t1"))
+            if (type.Equals("t1") && GameMaster.Currency >= cost)
             {
                 tower = (GameObject)Instantiate(towerPrefab, GameObject.FindGameObjectWithTag(tile).transform.position, Quaternion.identity);
                 // remove currency from player
                 GameMaster.Currency -= cost;
             }
-          else if (type.Equals("t2"))
+          else if (type.Equals("t2") && GameMaster.Currency >= cost2)
             {
                 tower = (GameObject)Instantiate(towerPrefab2, GameObject.FindGameObjectWithTag(tile).transform.position, Quaternion.identity);
                 // remove currency from player

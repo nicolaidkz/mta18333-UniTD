@@ -34,15 +34,14 @@ public class PixelToPosition : MonoBehaviour {
         arrayPos = gridMsg.Split(":"[0]);
         for (int i = 0; i < 92 ; i++)
         {
-           
             tempCoords = arrayPos[i].Split(","[0]);
             tempX = int.Parse(tempCoords[0]);
             tempY = int.Parse(tempCoords[1]);
-            xValues[i] = tempX;
+            xValues[i] = tempX - 30;
             yValues[i] = tempY;
             Debug.Log("Node"+(i+1)+"s X value is " + xValues[i] + " | Y value is " + yValues[i]);
         }
-        
+
         #region Node area definitions.
  
         if (x >= xValues[91] && x <= xValues[90] && y <= yValues[80] && y >= yValues[91])
@@ -297,13 +296,13 @@ public class PixelToPosition : MonoBehaviour {
             // place at E4
             return "E4";
         }
-        else if (x >= xValues[47] && x <= xValues[46] && y <= yValues[36] && y >= yValues[47])
+        else if (x >= xValues[47] && x <= xValues[46] && y <= 250 && y >= yValues[47])
         {
             
             // place at E5
             return "E5";
         }
-        else if (x >= xValues[46] && x <= xValues[45] && y <= yValues[35] && y >= yValues[46])
+        else if (x >= xValues[46] && x <= xValues[45] && y <= 250 && y >= yValues[46])
         {
             
             // place at E6
@@ -321,13 +320,13 @@ public class PixelToPosition : MonoBehaviour {
             // place at F1
             return "F1";
         }
-        else if (x >= xValues[43] && x <= xValues[42] && y <= yValues[32] && y >= yValues[43])
+        else if (x >= 195 && x <= 250 && y <= 300 && y >= 250)
         {
             
             // place at F2
             return "F2";
         }
-        else if (x >= xValues[42] && x <= xValues[41] && y <= yValues[31] && y >= yValues[42])
+        else if (x >= 330 && x <= 375 && y <= 300 && y >= 250)
         {
             
             // place at F3

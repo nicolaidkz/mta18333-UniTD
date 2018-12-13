@@ -47,7 +47,7 @@ class OpenCV:
         # debug for visible representation of detection
         print("displaying match at position: ")
         w, h = bTemp.shape[::-1]                         # x and y coordinates of detected object
-        location = np.where(result >= 0.63)                  # 0.7 is accuracy used when finding position???
+        location = np.where(result >= 0.62)                  # 0.7 is accuracy used when finding position???
                                                             # return x and y coordinates of detected object
 
         for pt in zip(*location[::-1]):
