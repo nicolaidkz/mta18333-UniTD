@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class WaveSpawner : MonoBehaviour
 {
     public GameObject posMaster;
+    public GameObject pTower;
 
     // This works like boolean variable but instead of only states (true and false) this has 3 states
     public enum SpawnState { Spawning, Waiting, Counting };
@@ -51,6 +52,7 @@ public class WaveSpawner : MonoBehaviour
         PlayerStats.victoryDeterminator = false;
         // set place to true, since we need to be able to place towers at start of game
         place = true;
+        pTower = GameObject.Find("Node");
     }
 
     void Update()
@@ -73,15 +75,16 @@ public class WaveSpawner : MonoBehaviour
         {
             // this is where we initiate the CV to get our positions. TODO: base spawn state on whether we are detecting.
 
-            var cScript = posMaster.GetComponent<ClientScript>();
-            cScript.GetPosition();
-
+            //var cScript = posMaster.GetComponent<ClientScript>();
+            //cScript.GetPosition();
+            var plScript = pTower.GetComponent<PlaceTower>();
+            plScript.TowerDetectPlace();
             // if the spawnState is spawning we first write a log to the console window that let us know that the space bar has been pressed
             // it then sets the two text canvas's to be invisible
             // it then write to that same text canvas that the wave # is spawning
             // it the spawns the wave using the StartCoroutine method which takes in our SpawnWave method which takes in the argument of a wave which in this case is our nextWave variable
             // lastly it sets our spawnstate to be waiting
-            if (state != SpawnState.Spawning)
+            if (state != SpawnState.Spawning && plScript.towersDetected)
             {
                 Debug.Log("Space bar pressed");
                 waveCountdownText.text = "Wave " + (nextWave + 1).ToString() + " is spawning";

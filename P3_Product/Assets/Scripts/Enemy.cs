@@ -16,14 +16,14 @@ public class Enemy : MonoBehaviour
     public float DistanceToGoal()
     {
         float distance = 0;
-        distance += Vector2.Distance(
+        distance += Vector3.Distance(
             gameObject.transform.position,
             Waypoints.points[wavepointIndex].transform.position);
         for (int i = wavepointIndex + 1; i < Waypoints.points.Length - 1; i++)
         {
             Vector3 startPosition = Waypoints.points[i].transform.position;
             Vector3 endPosition = Waypoints.points[i + 1].transform.position;
-            distance += Vector2.Distance(startPosition, endPosition);
+            distance += Vector3.Distance(startPosition, endPosition);
         }
         return distance;
     }
