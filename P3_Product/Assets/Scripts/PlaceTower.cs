@@ -113,25 +113,28 @@ public class PlaceTower : MonoBehaviour
        string[] splitPosP1T2 = towerArrayPos[1].Split(","[0]);
        Debug.Log("after splitting pos 1 into P1T2 pos 0: " + splitPosP1T2[0] + " and pos 1: " + splitPosP1T2[1]);
 
-       /* string[] splitPosP2T1 = towerArrayPos[2].Split(","[0]);
+       string[] splitPosP2T1 = towerArrayPos[2].Split(","[0]);
        Debug.Log("after splitting pos 2 into P2T1 pos 0: " + splitPosP2T1[0] + " and pos 1: " + splitPosP2T1[1]);
 
        string[] splitPosP2T2 = towerArrayPos[3].Split(","[0]);
        Debug.Log("after splitting pos 3 into P2T2 pos 0: " + splitPosP2T2[0] + " and pos 1: " + splitPosP2T2[1]);
-       */
 
-       int towerP1T1X, towerP1T2X;
-       int towerP1T1Y, towerP1T2Y;
+       int towerP1T1X, towerP1T2X, towerP2T1X, towerP2T2X;
+       int towerP1T1Y, towerP1T2Y, towerP2T1Y, towerP2T2Y;
        int.TryParse(splitPosP1T1[0], out towerP1T1X);
        int.TryParse(splitPosP1T1[1], out towerP1T1Y);
        int.TryParse(splitPosP1T2[0], out towerP1T2X);
        int.TryParse(splitPosP1T2[1], out towerP1T2Y);
-       Debug.Log("after int conv: " + towerP1T1X + "," + towerP1T1Y);
+       int.TryParse(splitPosP2T1[0], out towerP2T1X);
+       int.TryParse(splitPosP2T1[1], out towerP2T1Y);
+       int.TryParse(splitPosP2T2[0], out towerP2T2X);
+       int.TryParse(splitPosP2T2[1], out towerP2T2Y);
+        Debug.Log("after int conv: " + towerP1T1X + "," + towerP1T1Y);
         
        SetTower(towerP1T1X, towerP1T1Y, "t1");
        SetTower(towerP1T2X, towerP1T2Y , "t2");
-      // SetTower(towerP2T1X, towerP2T1Y, "p2t1");
-      // SetTower(towerP2T2X, towerP2T2Y, "p2t2");
+       SetTower(towerP2T1X, towerP2T1Y, "p2t1");
+       SetTower(towerP2T2X, towerP2T2Y, "p2t2");
         //return "position is " + towerP1T1X + "," + towerP1T1Y;
     }
 
@@ -162,7 +165,19 @@ public class PlaceTower : MonoBehaviour
                 // remove currency from player
                 GameMaster.Currency -= cost2;
             }
-       }
+            else if (type.Equals("p2t1") && GameMaster.Currency2 >= cost)
+            {
+                tower = (GameObject)Instantiate(P2towerPrefab, GameObject.FindGameObjectWithTag(tile).transform.position, Quaternion.identity);
+                // remove currency from player
+                GameMaster.Currency2 -= cost;
+            }
+            else if (type.Equals("p2t2") && GameMaster.Currency2 >= cost2)
+            {
+                tower = (GameObject)Instantiate(P2towerPrefab2, GameObject.FindGameObjectWithTag(tile).transform.position, Quaternion.identity);
+                // remove currency from player
+                GameMaster.Currency2 -= cost2;
+            }
+        }
        else { Debug.Log("No viable placement"); }
 
         towersDetected = true;

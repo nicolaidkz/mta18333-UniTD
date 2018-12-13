@@ -4,8 +4,11 @@
     <list default="true" id="35a027a1-6501-4807-9172-cce546a68256" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenCV.py" beforeDir="false" afterPath="$PROJECT_DIR$/OpenCV.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template_p1t2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/template_p1t2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template_p2t1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/template_p2t1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TCP.py" beforeDir="false" afterPath="$PROJECT_DIR$/TCP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/realImg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/realImg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templateEx.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/templateEx.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_p1t1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/template_p1t1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_p2t2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/template_p2t2.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testing.png" beforeDir="false" afterPath="$PROJECT_DIR$/testing.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -86,7 +89,7 @@
     <session id="152122431">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
           <entry key="project.opened" value="2" />
@@ -94,12 +97,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="289" />
+          <entry key="py" value="357" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="289" />
+          <entry key="Python" value="357" />
         </counts>
       </usages-collector>
     </session>
@@ -109,8 +112,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TCP.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="41" column="124" selection-start-line="41" selection-start-column="124" selection-end-line="41" selection-end-column="124" />
+            <state relative-caret-position="-15">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -121,8 +124,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/OpenCV.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
+            <state relative-caret-position="255">
+              <caret line="57" column="30" lean-forward="true" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -156,9 +159,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="951" />
-    <option name="width" value="975" />
-    <option name="height" value="1059" />
+    <option name="x" value="1992" />
+    <option name="y" value="2" />
+    <option name="width" value="1219" />
+    <option name="height" value="1103" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -254,14 +258,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1273" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.07931262" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22978723" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22978723" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -289,8 +292,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TCP.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="41" column="124" selection-start-line="41" selection-start-column="124" selection-end-line="41" selection-end-column="124" />
+        <state relative-caret-position="-15">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -299,8 +302,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/OpenCV.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
+        <state relative-caret-position="255">
+          <caret line="57" column="30" lean-forward="true" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>

@@ -37,10 +37,10 @@ class OpenCV:
         # empty space to return "nothing found"
         gray_img = cv.cvtColor(frame_, cv.COLOR_BGR2GRAY)   # convert image to grayscale
         template = cv.cvtColor(template_, cv.COLOR_BGR2GRAY)  # convert template to grayscale
-        aTH = cv.adaptiveThreshold(gray_img, 200, cv.ADAPTIVE_THRESH_MEAN_C, cv.THRESH_BINARY, 49, 8)
+        aTH = cv.adaptiveThreshold(gray_img, 200, cv.ADAPTIVE_THRESH_MEAN_C, cv.THRESH_BINARY, 191, 8)
         _,bTemp = cv.threshold(template, 80, 200, cv.THRESH_BINARY)
-        # cv.imwrite("templateEx.jpg", bTemp)
-        # cv.imwrite("realImg.jpg", aTH)
+        cv.imwrite("templateEx.jpg", bTemp)
+        cv.imwrite("realImg.jpg", aTH)
 
         result = cv.matchTemplate(aTH, bTemp, cv.TM_CCOEFF_NORMED) # run the template matching and save as result
         # print("template matching..")
