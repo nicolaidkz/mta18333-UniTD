@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35a027a1-6501-4807-9172-cce546a68256" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Assets/Scripts/BulletBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Assets/Scripts/BulletBehavior.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV.py" beforeDir="false" afterPath="$PROJECT_DIR$/OpenCV.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/realImg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/realImg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templateEx.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/templateEx.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template_p1t1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/template_p1t1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template_p1t2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/template_p1t2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template_p2t1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/template_p2t1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template_p2t2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/template_p2t2.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testing.png" beforeDir="false" afterPath="$PROJECT_DIR$/testing.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -113,7 +108,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TCP.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
+            <state relative-caret-position="17">
               <caret line="29" selection-start-line="29" selection-end-line="29" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -294,7 +289,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TCP.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
+        <state relative-caret-position="17">
           <caret line="29" selection-start-line="29" selection-end-line="29" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
