@@ -38,7 +38,7 @@ public class PixelToPosition : MonoBehaviour {
             tempX = int.Parse(tempCoords[0]);
             tempY = int.Parse(tempCoords[1]);
             xValues[i] = tempX - 30;
-            yValues[i] = tempY;
+            yValues[i] = tempY + 10;
             Debug.Log("Node"+(i+1)+"s X value is " + xValues[i] + " | Y value is " + yValues[i]);
         }
 
@@ -296,13 +296,13 @@ public class PixelToPosition : MonoBehaviour {
             // place at E4
             return "E4";
         }
-        else if (x >= xValues[47] && x <= xValues[46] && y <= 250 && y >= yValues[47])
+        else if (x >= xValues[47] && x <= xValues[46] && y <= yValues[48]+45 && y >= yValues[48])
         {
             
             // place at E5
             return "E5";
         }
-        else if (x >= xValues[46] && x <= xValues[45] && y <= 250 && y >= yValues[46])
+        else if (x >= xValues[46] && x <= xValues[46]+50 && y <= yValues[48]+45 && y >= yValues[48])
         {
             
             // place at E6
@@ -320,13 +320,13 @@ public class PixelToPosition : MonoBehaviour {
             // place at F1
             return "F1";
         }
-        else if (x >= 195 && x <= 250 && y <= 300 && y >= 250)
+        else if (x >= xValues[43] && x <= xValues[43]+50 && y <= yValues[44]+50 && y >= yValues[44])
         {
             
             // place at F2
             return "F2";
         }
-        else if (x >= 330 && x <= 375 && y <= 300 && y >= 250)
+        else if (x >= xValues[42] && x <= xValues[41] && y <= yValues[31] && y >= yValues[42])
         {
             
             // place at F3
