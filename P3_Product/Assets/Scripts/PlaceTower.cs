@@ -31,45 +31,6 @@ public class PlaceTower : MonoBehaviour
         towersDetected = false;
         GetPosition();
     }
-// Method run when pressing mouse button down.
-/*   void OnMouseDown()
-
-// Check if place is true so you can not spawn while wave is going
-   { if (Wave.place == true) {
-// Place Player 1 tower 1 and deduct cost
-       if (Input.GetMouseButton(1) && CanPlaceTower() && GameMaster.Currency >= cost2 && Input.GetKey("a") == false)
-       {
-               Debug.Log("entered OnMouseDown");
-               GetPosition();
-
-
-           tower = (GameObject) Instantiate(towerPrefab2, transform.position, Quaternion.identity);
-           GameMaster.Currency -= cost2;
-
-
-       }
-
-// Place Player 1 tower 2 and deduct cost.
-       if (CanPlaceTower() && Input.GetMouseButton(1) == false && GameMaster.Currency >= cost && Input.GetKey("a") == false)
-       {
-               tower = (GameObject) Instantiate(towerPrefab, transform.position, Quaternion.identity);
-               GameMaster.Currency -= cost;
-       }
-// Place Player 2 tower 1 and deduct cost
-           if (Input.GetMouseButton(1) && CanPlaceTower() && GameMaster.Currency2 >= cost2 && Input.GetKey("a"))
-       {
-           tower = (GameObject)Instantiate(P2towerPrefab2, transform.position, Quaternion.identity);
-           GameMaster.Currency2 -= cost2;
-       }
-
-// Place Player 2 tower 2 and deduct cost
-           if (CanPlaceTower() && Input.GetMouseButton(1) == false && GameMaster.Currency2 >= cost && Input.GetKey("a"))
-       {
-           tower = (GameObject)Instantiate(P2towerPrefab, transform.position, Quaternion.identity);
-           GameMaster.Currency2 -= cost;
-       }
-   }
-}*/
 
 // Access component of GameMaster object, PlayerStats.
    void Start ()
