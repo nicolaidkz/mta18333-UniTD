@@ -3,4 +3,3 @@ Do to complications with making an .exe file the server will have to be run via 
 once opened in visual studio or pycharm and the interpreter is chosen
 
 run the server and then run the .exe file of the unity game found in the game exe folder
-one step back
