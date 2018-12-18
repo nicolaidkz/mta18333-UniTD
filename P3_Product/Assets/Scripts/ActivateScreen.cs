@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ActivateScreen : MonoBehaviour {
 
-	// Use this for initialization
+	// this enable us to use two screens by looking for more screens
 	void Start () {
         Debug.Log("displays connected: " + Display.displays.Length);
         // Display.displays[0] is the primary, default display and is always ON.
@@ -14,9 +14,4 @@ public class ActivateScreen : MonoBehaviour {
         if (Display.displays.Length > 2)
             Display.displays[2].Activate();
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
