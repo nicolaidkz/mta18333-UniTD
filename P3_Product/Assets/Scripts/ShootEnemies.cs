@@ -45,7 +45,7 @@ public class ShootEnemies : MonoBehaviour {
 
     void Update () {
         GameObject target = null;
-// Determine target of tower. Iterate over all enemies in range and chose enemy furthest along waypoints.
+// Determine target of tower. Iterate over all enemies in range and choose enemy furthest along waypoints.
         float minimalEnemyDistance = float.MaxValue;
         foreach (GameObject enemy in enemiesInRange)
         {

@@ -142,7 +142,6 @@ public class PlaceTower : MonoBehaviour
        else { Debug.Log("No viable placement"); }
 
         towersDetected = true;
-       // etc.. we need every possible placement here as ranges of x, y coordinates! 
    }
 }
 
