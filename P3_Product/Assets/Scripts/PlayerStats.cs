@@ -67,6 +67,7 @@ public class PlayerStats : MonoBehaviour
         // waveCounter is set to 1 to show that the game starts at wave 1
         waveCounter = 1;
 
+        // sets currency equal to the values passed in the inspector and changes the text in the text ui elements
         currency1 = Currency;
         currency2 = Currency2;
         currencyTextP1.GetComponent<Text>().text = currency1 + " $";

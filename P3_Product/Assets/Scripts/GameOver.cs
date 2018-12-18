@@ -8,8 +8,10 @@ using UnityEngine.SceneManagement;
 // This is the methods for the gameOverUI which is the screen popping up after the game is lost
 public class GameOver : MonoBehaviour {
 
+    // makes us able to put the mainMenu scene into the inspector
     public string loadMenu = "MainMenu";
 
+    // adds the scenefader to the inspector
     public SceneFader sceneFader;
 
     // Retry uses the scenemanager with the built-in function Loadscene to load the game's scene by doing it this way it basically restarts the scene
@@ -20,7 +22,7 @@ public class GameOver : MonoBehaviour {
         sceneFader.FadeTo(SceneManager.GetActiveScene().name);
     }
 
-    // The menu function is supposed to load the menu scene but for now it just write a comment in the console window.
+    // it uses the scenefader to load the menu
     public void Menu() {
         sceneFader.FadeTo(loadMenu);
     }
