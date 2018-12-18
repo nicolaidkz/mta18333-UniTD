@@ -13,7 +13,6 @@ ExportedObj/
 .consulo/
 *.csproj
 *.unityproj
-*.sln
 *.suo
 *.tmp
 *.user
@@ -34,3 +33,5 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+P3_Product/UnityPackageManager/manifest\.json
